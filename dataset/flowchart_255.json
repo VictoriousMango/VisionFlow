@@ -1,0 +1,205 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Binary Search",
+      "x": 400,
+      "y": 50,
+      "w": 231,
+      "h": 37,
+      "center_x": 515,
+      "center_y": 68,
+      "bottom_y": 87,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "low = 0, high = n-1",
+      "x": 400,
+      "y": 187,
+      "w": 263,
+      "h": 50,
+      "center_x": 531,
+      "center_y": 212,
+      "bottom_y": 237,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "diamond",
+      "text": "low <= high?",
+      "x": 400,
+      "y": 337,
+      "w": 268,
+      "h": 68,
+      "center_x": 534,
+      "center_y": 371,
+      "bottom_y": 405,
+      "step_type": "decision",
+      "true_branch": 3,
+      "false_branch": 6
+    },
+    {
+      "id": 3,
+      "shape": "rectangle",
+      "text": "mid = (low + high) / 2",
+      "x": 400,
+      "y": 505,
+      "w": 302,
+      "h": 34,
+      "center_x": 551,
+      "center_y": 522,
+      "bottom_y": 539,
+      "step_type": "process"
+    },
+    {
+      "id": 4,
+      "shape": "diamond",
+      "text": "array[mid] == target?",
+      "x": 400,
+      "y": 639,
+      "w": 356,
+      "h": 66,
+      "center_x": 578,
+      "center_y": 672,
+      "bottom_y": 705,
+      "step_type": "decision",
+      "true_branch": 7,
+      "false_branch": 5
+    },
+    {
+      "id": 5,
+      "shape": "diamond",
+      "text": "array[mid] > target?",
+      "x": 400,
+      "y": 805,
+      "w": 336,
+      "h": 51,
+      "center_x": 568,
+      "center_y": 830,
+      "bottom_y": 856,
+      "step_type": "decision",
+      "true_branch": 8,
+      "false_branch": 9
+    },
+    {
+      "id": 6,
+      "shape": "rectangle",
+      "text": "Return -1",
+      "x": 400,
+      "y": 956,
+      "w": 166,
+      "h": 41,
+      "center_x": 483,
+      "center_y": 976,
+      "bottom_y": 997,
+      "step_type": "process"
+    },
+    {
+      "id": 7,
+      "shape": "rectangle",
+      "text": "Return mid",
+      "x": 400,
+      "y": 1097,
+      "w": 162,
+      "h": 53,
+      "center_x": 481,
+      "center_y": 1123,
+      "bottom_y": 1150,
+      "step_type": "process"
+    },
+    {
+      "id": 8,
+      "shape": "rectangle",
+      "text": "high = mid - 1",
+      "x": 400,
+      "y": 1250,
+      "w": 203,
+      "h": 35,
+      "center_x": 501,
+      "center_y": 1267,
+      "bottom_y": 1285,
+      "step_type": "process"
+    },
+    {
+      "id": 9,
+      "shape": "rectangle",
+      "text": "low = mid + 1",
+      "x": 400,
+      "y": 1385,
+      "w": 191,
+      "h": 37,
+      "center_x": 495,
+      "center_y": 1403,
+      "bottom_y": 1422,
+      "step_type": "process"
+    },
+    {
+      "id": 10,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 1522,
+      "w": 95,
+      "h": 51,
+      "center_x": 447,
+      "center_y": 1547,
+      "bottom_y": 1573,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": "True"
+    },
+    {
+      "from_id": 2,
+      "to_id": 6,
+      "label": "False"
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": null
+    },
+    {
+      "from_id": 4,
+      "to_id": 7,
+      "label": "True"
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": "False"
+    },
+    {
+      "from_id": 5,
+      "to_id": 8,
+      "label": "True"
+    },
+    {
+      "from_id": 5,
+      "to_id": 9,
+      "label": "False"
+    },
+    {
+      "from_id": 9,
+      "to_id": 10,
+      "label": null
+    }
+  ]
+}

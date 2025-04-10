@@ -1,0 +1,55 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Trie Search",
+      "x": 400,
+      "y": 50,
+      "w": 221,
+      "h": 44,
+      "center_x": 510,
+      "center_y": 72,
+      "bottom_y": 94,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Implementation TBD",
+      "x": 400,
+      "y": 194,
+      "w": 218,
+      "h": 39,
+      "center_x": 509,
+      "center_y": 213,
+      "bottom_y": 233,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 333,
+      "w": 60,
+      "h": 46,
+      "center_x": 430,
+      "center_y": 356,
+      "bottom_y": 379,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    }
+  ]
+}

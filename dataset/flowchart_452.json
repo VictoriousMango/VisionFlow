@@ -1,0 +1,129 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Topological Sort",
+      "x": 400,
+      "y": 50,
+      "w": 248,
+      "h": 34,
+      "center_x": 524,
+      "center_y": 67,
+      "bottom_y": 84,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Initialize stack",
+      "x": 400,
+      "y": 184,
+      "w": 172,
+      "h": 40,
+      "center_x": 486,
+      "center_y": 204,
+      "bottom_y": 224,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "diamond",
+      "text": "Unvisited nodes?",
+      "x": 400,
+      "y": 324,
+      "w": 312,
+      "h": 81,
+      "center_x": 556,
+      "center_y": 364,
+      "bottom_y": 405,
+      "step_type": "decision",
+      "true_branch": 3,
+      "false_branch": 6
+    },
+    {
+      "id": 3,
+      "shape": "rectangle",
+      "text": "DFS from unvisited node",
+      "x": 400,
+      "y": 505,
+      "w": 273,
+      "h": 40,
+      "center_x": 536,
+      "center_y": 525,
+      "bottom_y": 545,
+      "step_type": "process"
+    },
+    {
+      "id": 4,
+      "shape": "rectangle",
+      "text": "Add node to stack",
+      "x": 400,
+      "y": 645,
+      "w": 215,
+      "h": 49,
+      "center_x": 507,
+      "center_y": 669,
+      "bottom_y": 694,
+      "step_type": "process"
+    },
+    {
+      "id": 5,
+      "shape": "rectangle",
+      "text": "Next node",
+      "x": 400,
+      "y": 794,
+      "w": 158,
+      "h": 52,
+      "center_x": 479,
+      "center_y": 820,
+      "bottom_y": 846,
+      "step_type": "process"
+    },
+    {
+      "id": 6,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 946,
+      "w": 87,
+      "h": 39,
+      "center_x": 443,
+      "center_y": 965,
+      "bottom_y": 985,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": "True"
+    },
+    {
+      "from_id": 2,
+      "to_id": 6,
+      "label": "False"
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": null
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": null
+    }
+  ]
+}

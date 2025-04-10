@@ -1,0 +1,149 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Kruskal",
+      "x": 400,
+      "y": 50,
+      "w": 153,
+      "h": 52,
+      "center_x": 476,
+      "center_y": 76,
+      "bottom_y": 102,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Sort edges by weight",
+      "x": 400,
+      "y": 202,
+      "w": 226,
+      "h": 43,
+      "center_x": 513,
+      "center_y": 223,
+      "bottom_y": 245,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "rectangle",
+      "text": "Initialize disjoint set",
+      "x": 400,
+      "y": 345,
+      "w": 214,
+      "h": 35,
+      "center_x": 507,
+      "center_y": 362,
+      "bottom_y": 380,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "diamond",
+      "text": "More edges?",
+      "x": 400,
+      "y": 480,
+      "w": 260,
+      "h": 51,
+      "center_x": 530,
+      "center_y": 505,
+      "bottom_y": 531,
+      "step_type": "decision",
+      "true_branch": 4,
+      "false_branch": 7
+    },
+    {
+      "id": 4,
+      "shape": "diamond",
+      "text": "No cycle formed?",
+      "x": 400,
+      "y": 631,
+      "w": 321,
+      "h": 53,
+      "center_x": 560,
+      "center_y": 657,
+      "bottom_y": 684,
+      "step_type": "decision",
+      "true_branch": 5,
+      "false_branch": 6
+    },
+    {
+      "id": 5,
+      "shape": "rectangle",
+      "text": "Add edge to MST",
+      "x": 400,
+      "y": 784,
+      "w": 232,
+      "h": 47,
+      "center_x": 516,
+      "center_y": 807,
+      "bottom_y": 831,
+      "step_type": "process"
+    },
+    {
+      "id": 6,
+      "shape": "rectangle",
+      "text": "Next edge",
+      "x": 400,
+      "y": 931,
+      "w": 165,
+      "h": 49,
+      "center_x": 482,
+      "center_y": 955,
+      "bottom_y": 980,
+      "step_type": "process"
+    },
+    {
+      "id": 7,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 1080,
+      "w": 86,
+      "h": 38,
+      "center_x": 443,
+      "center_y": 1099,
+      "bottom_y": 1118,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": null
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": "True"
+    },
+    {
+      "from_id": 3,
+      "to_id": 7,
+      "label": "False"
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": "True"
+    },
+    {
+      "from_id": 4,
+      "to_id": 6,
+      "label": "False"
+    }
+  ]
+}

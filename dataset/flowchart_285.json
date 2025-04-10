@@ -1,0 +1,111 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Quick Sort",
+      "x": 400,
+      "y": 50,
+      "w": 200,
+      "h": 38,
+      "center_x": 500,
+      "center_y": 69,
+      "bottom_y": 88,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "diamond",
+      "text": "low < high?",
+      "x": 400,
+      "y": 188,
+      "w": 227,
+      "h": 69,
+      "center_x": 513,
+      "center_y": 222,
+      "bottom_y": 257,
+      "step_type": "decision",
+      "true_branch": 2,
+      "false_branch": 5
+    },
+    {
+      "id": 2,
+      "shape": "rectangle",
+      "text": "pivot = partition(low, high)",
+      "x": 400,
+      "y": 357,
+      "w": 306,
+      "h": 43,
+      "center_x": 553,
+      "center_y": 378,
+      "bottom_y": 400,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "rectangle",
+      "text": "QuickSort(low, pivot-1)",
+      "x": 400,
+      "y": 500,
+      "w": 280,
+      "h": 38,
+      "center_x": 540,
+      "center_y": 519,
+      "bottom_y": 538,
+      "step_type": "process"
+    },
+    {
+      "id": 4,
+      "shape": "rectangle",
+      "text": "QuickSort(pivot+1, high)",
+      "x": 400,
+      "y": 638,
+      "w": 271,
+      "h": 39,
+      "center_x": 535,
+      "center_y": 657,
+      "bottom_y": 677,
+      "step_type": "process"
+    },
+    {
+      "id": 5,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 777,
+      "w": 72,
+      "h": 43,
+      "center_x": 436,
+      "center_y": 798,
+      "bottom_y": 820,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": "True"
+    },
+    {
+      "from_id": 1,
+      "to_id": 5,
+      "label": "False"
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": null
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": null
+    }
+  ]
+}

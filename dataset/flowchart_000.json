@@ -1,0 +1,55 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Trie Insert",
+      "x": 400,
+      "y": 50,
+      "w": 199,
+      "h": 35,
+      "center_x": 499,
+      "center_y": 67,
+      "bottom_y": 85,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Implementation TBD",
+      "x": 400,
+      "y": 185,
+      "w": 215,
+      "h": 51,
+      "center_x": 507,
+      "center_y": 210,
+      "bottom_y": 236,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 336,
+      "w": 80,
+      "h": 46,
+      "center_x": 440,
+      "center_y": 359,
+      "bottom_y": 382,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    }
+  ]
+}

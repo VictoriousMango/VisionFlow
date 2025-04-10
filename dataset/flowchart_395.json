@@ -1,0 +1,88 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start GCD",
+      "x": 400,
+      "y": 50,
+      "w": 130,
+      "h": 49,
+      "center_x": 465,
+      "center_y": 74,
+      "bottom_y": 99,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "diamond",
+      "text": "b == 0?",
+      "x": 400,
+      "y": 199,
+      "w": 168,
+      "h": 62,
+      "center_x": 484,
+      "center_y": 230,
+      "bottom_y": 261,
+      "step_type": "decision",
+      "true_branch": 3,
+      "false_branch": 4
+    },
+    {
+      "id": 2,
+      "shape": "rectangle",
+      "text": "Return a",
+      "x": 400,
+      "y": 361,
+      "w": 152,
+      "h": 41,
+      "center_x": 476,
+      "center_y": 381,
+      "bottom_y": 402,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "rectangle",
+      "text": "GCD(b, a % b)",
+      "x": 400,
+      "y": 502,
+      "w": 204,
+      "h": 35,
+      "center_x": 502,
+      "center_y": 519,
+      "bottom_y": 537,
+      "step_type": "process"
+    },
+    {
+      "id": 4,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 637,
+      "w": 87,
+      "h": 40,
+      "center_x": 443,
+      "center_y": 657,
+      "bottom_y": 677,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 3,
+      "label": "True"
+    },
+    {
+      "from_id": 1,
+      "to_id": 4,
+      "label": "False"
+    }
+  ]
+}

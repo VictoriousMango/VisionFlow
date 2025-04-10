@@ -1,0 +1,149 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Linear Search",
+      "x": 400,
+      "y": 50,
+      "w": 224,
+      "h": 35,
+      "center_x": 512,
+      "center_y": 67,
+      "bottom_y": 85,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "i = 0",
+      "x": 400,
+      "y": 185,
+      "w": 76,
+      "h": 43,
+      "center_x": 438,
+      "center_y": 206,
+      "bottom_y": 228,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "diamond",
+      "text": "i < n?",
+      "x": 400,
+      "y": 328,
+      "w": 123,
+      "h": 54,
+      "center_x": 461,
+      "center_y": 355,
+      "bottom_y": 382,
+      "step_type": "decision",
+      "true_branch": 3,
+      "false_branch": 5
+    },
+    {
+      "id": 3,
+      "shape": "diamond",
+      "text": "array[i] == target?",
+      "x": 400,
+      "y": 482,
+      "w": 354,
+      "h": 57,
+      "center_x": 577,
+      "center_y": 510,
+      "bottom_y": 539,
+      "step_type": "decision",
+      "true_branch": 6,
+      "false_branch": 4
+    },
+    {
+      "id": 4,
+      "shape": "rectangle",
+      "text": "i = i + 1",
+      "x": 400,
+      "y": 639,
+      "w": 143,
+      "h": 42,
+      "center_x": 471,
+      "center_y": 660,
+      "bottom_y": 681,
+      "step_type": "process"
+    },
+    {
+      "id": 5,
+      "shape": "rectangle",
+      "text": "Return -1",
+      "x": 400,
+      "y": 781,
+      "w": 142,
+      "h": 51,
+      "center_x": 471,
+      "center_y": 806,
+      "bottom_y": 832,
+      "step_type": "process"
+    },
+    {
+      "id": 6,
+      "shape": "rectangle",
+      "text": "Return i",
+      "x": 400,
+      "y": 932,
+      "w": 119,
+      "h": 54,
+      "center_x": 459,
+      "center_y": 959,
+      "bottom_y": 986,
+      "step_type": "process"
+    },
+    {
+      "id": 7,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 1086,
+      "w": 87,
+      "h": 48,
+      "center_x": 443,
+      "center_y": 1110,
+      "bottom_y": 1134,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": "True"
+    },
+    {
+      "from_id": 2,
+      "to_id": 5,
+      "label": "False"
+    },
+    {
+      "from_id": 3,
+      "to_id": 6,
+      "label": "True"
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": "False"
+    },
+    {
+      "from_id": 6,
+      "to_id": 7,
+      "label": null
+    }
+  ]
+}

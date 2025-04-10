@@ -1,0 +1,167 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Rabin-Karp",
+      "x": 400,
+      "y": 50,
+      "w": 210,
+      "h": 53,
+      "center_x": 505,
+      "center_y": 76,
+      "bottom_y": 103,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Compute pattern hash",
+      "x": 400,
+      "y": 203,
+      "w": 273,
+      "h": 39,
+      "center_x": 536,
+      "center_y": 222,
+      "bottom_y": 242,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "rectangle",
+      "text": "i = 0",
+      "x": 400,
+      "y": 342,
+      "w": 119,
+      "h": 46,
+      "center_x": 459,
+      "center_y": 365,
+      "bottom_y": 388,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "diamond",
+      "text": "i <= n-m?",
+      "x": 400,
+      "y": 488,
+      "w": 234,
+      "h": 65,
+      "center_x": 517,
+      "center_y": 520,
+      "bottom_y": 553,
+      "step_type": "decision",
+      "true_branch": 4,
+      "false_branch": 8
+    },
+    {
+      "id": 4,
+      "shape": "rectangle",
+      "text": "Compute window hash",
+      "x": 400,
+      "y": 653,
+      "w": 239,
+      "h": 37,
+      "center_x": 519,
+      "center_y": 671,
+      "bottom_y": 690,
+      "step_type": "process"
+    },
+    {
+      "id": 5,
+      "shape": "diamond",
+      "text": "Hash match?",
+      "x": 400,
+      "y": 790,
+      "w": 254,
+      "h": 55,
+      "center_x": 527,
+      "center_y": 817,
+      "bottom_y": 845,
+      "step_type": "decision",
+      "true_branch": 6,
+      "false_branch": 7
+    },
+    {
+      "id": 6,
+      "shape": "rectangle",
+      "text": "Check characters",
+      "x": 400,
+      "y": 945,
+      "w": 195,
+      "h": 51,
+      "center_x": 497,
+      "center_y": 970,
+      "bottom_y": 996,
+      "step_type": "process"
+    },
+    {
+      "id": 7,
+      "shape": "rectangle",
+      "text": "Slide window",
+      "x": 400,
+      "y": 1096,
+      "w": 157,
+      "h": 53,
+      "center_x": 478,
+      "center_y": 1122,
+      "bottom_y": 1149,
+      "step_type": "process"
+    },
+    {
+      "id": 8,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 1249,
+      "w": 88,
+      "h": 49,
+      "center_x": 444,
+      "center_y": 1273,
+      "bottom_y": 1298,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": null
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": "True"
+    },
+    {
+      "from_id": 3,
+      "to_id": 8,
+      "label": "False"
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": null
+    },
+    {
+      "from_id": 5,
+      "to_id": 6,
+      "label": "True"
+    },
+    {
+      "from_id": 5,
+      "to_id": 7,
+      "label": "False"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Articulation Points",
+      "x": 400,
+      "y": 50,
+      "w": 254,
+      "h": 39,
+      "center_x": 527,
+      "center_y": 69,
+      "bottom_y": 89,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Implementation TBD",
+      "x": 400,
+      "y": 189,
+      "w": 212,
+      "h": 53,
+      "center_x": 506,
+      "center_y": 215,
+      "bottom_y": 242,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 342,
+      "w": 82,
+      "h": 49,
+      "center_x": 441,
+      "center_y": 366,
+      "bottom_y": 391,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    }
+  ]
+}

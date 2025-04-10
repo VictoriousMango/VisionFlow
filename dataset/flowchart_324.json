@@ -1,0 +1,55 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Euler Path",
+      "x": 400,
+      "y": 50,
+      "w": 202,
+      "h": 41,
+      "center_x": 501,
+      "center_y": 70,
+      "bottom_y": 91,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Implementation TBD",
+      "x": 400,
+      "y": 191,
+      "w": 225,
+      "h": 34,
+      "center_x": 512,
+      "center_y": 208,
+      "bottom_y": 225,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 325,
+      "w": 55,
+      "h": 39,
+      "center_x": 427,
+      "center_y": 344,
+      "bottom_y": 364,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Manacher",
+      "x": 400,
+      "y": 50,
+      "w": 201,
+      "h": 41,
+      "center_x": 500,
+      "center_y": 70,
+      "bottom_y": 91,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Implementation TBD",
+      "x": 400,
+      "y": 191,
+      "w": 235,
+      "h": 43,
+      "center_x": 517,
+      "center_y": 212,
+      "bottom_y": 234,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 334,
+      "w": 75,
+      "h": 45,
+      "center_x": 437,
+      "center_y": 356,
+      "bottom_y": 379,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    }
+  ]
+}

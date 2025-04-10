@@ -1,0 +1,223 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start LCS",
+      "x": 400,
+      "y": 50,
+      "w": 126,
+      "h": 43,
+      "center_x": 463,
+      "center_y": 71,
+      "bottom_y": 93,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Initialize dp[m+1][n+1]",
+      "x": 400,
+      "y": 193,
+      "w": 248,
+      "h": 42,
+      "center_x": 524,
+      "center_y": 214,
+      "bottom_y": 235,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "rectangle",
+      "text": "i = 0",
+      "x": 400,
+      "y": 335,
+      "w": 85,
+      "h": 47,
+      "center_x": 442,
+      "center_y": 358,
+      "bottom_y": 382,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "diamond",
+      "text": "i <= m?",
+      "x": 400,
+      "y": 482,
+      "w": 177,
+      "h": 80,
+      "center_x": 488,
+      "center_y": 522,
+      "bottom_y": 562,
+      "step_type": "decision",
+      "true_branch": 4,
+      "false_branch": 11
+    },
+    {
+      "id": 4,
+      "shape": "rectangle",
+      "text": "j = 0",
+      "x": 400,
+      "y": 662,
+      "w": 103,
+      "h": 53,
+      "center_x": 451,
+      "center_y": 688,
+      "bottom_y": 715,
+      "step_type": "process"
+    },
+    {
+      "id": 5,
+      "shape": "diamond",
+      "text": "j <= n?",
+      "x": 400,
+      "y": 815,
+      "w": 179,
+      "h": 64,
+      "center_x": 489,
+      "center_y": 847,
+      "bottom_y": 879,
+      "step_type": "decision",
+      "true_branch": 6,
+      "false_branch": 10
+    },
+    {
+      "id": 6,
+      "shape": "diamond",
+      "text": "str1[i-1] == str2[j-1]?",
+      "x": 400,
+      "y": 979,
+      "w": 393,
+      "h": 55,
+      "center_x": 596,
+      "center_y": 1006,
+      "bottom_y": 1034,
+      "step_type": "decision",
+      "true_branch": 7,
+      "false_branch": 8
+    },
+    {
+      "id": 7,
+      "shape": "rectangle",
+      "text": "dp[i][j] = dp[i-1][j-1] + 1",
+      "x": 400,
+      "y": 1134,
+      "w": 296,
+      "h": 54,
+      "center_x": 548,
+      "center_y": 1161,
+      "bottom_y": 1188,
+      "step_type": "process"
+    },
+    {
+      "id": 8,
+      "shape": "rectangle",
+      "text": "dp[i][j] = max(dp[i-1][j], dp[i][j-1])",
+      "x": 400,
+      "y": 1288,
+      "w": 392,
+      "h": 43,
+      "center_x": 596,
+      "center_y": 1309,
+      "bottom_y": 1331,
+      "step_type": "process"
+    },
+    {
+      "id": 9,
+      "shape": "rectangle",
+      "text": "j = j + 1",
+      "x": 400,
+      "y": 1431,
+      "w": 157,
+      "h": 48,
+      "center_x": 478,
+      "center_y": 1455,
+      "bottom_y": 1479,
+      "step_type": "process"
+    },
+    {
+      "id": 10,
+      "shape": "rectangle",
+      "text": "i = i + 1",
+      "x": 400,
+      "y": 1579,
+      "w": 160,
+      "h": 42,
+      "center_x": 480,
+      "center_y": 1600,
+      "bottom_y": 1621,
+      "step_type": "process"
+    },
+    {
+      "id": 11,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 1721,
+      "w": 87,
+      "h": 51,
+      "center_x": 443,
+      "center_y": 1746,
+      "bottom_y": 1772,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": null
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": "True"
+    },
+    {
+      "from_id": 3,
+      "to_id": 11,
+      "label": "False"
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": null
+    },
+    {
+      "from_id": 5,
+      "to_id": 6,
+      "label": "True"
+    },
+    {
+      "from_id": 5,
+      "to_id": 10,
+      "label": "False"
+    },
+    {
+      "from_id": 6,
+      "to_id": 7,
+      "label": "True"
+    },
+    {
+      "from_id": 6,
+      "to_id": 8,
+      "label": "False"
+    },
+    {
+      "from_id": 8,
+      "to_id": 9,
+      "label": null
+    }
+  ]
+}

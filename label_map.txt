@@ -1,0 +1,3 @@
+item { id: 1 name: 'oval' }
+item { id: 2 name: 'diamond' }
+item { id: 3 name: 'rectangle' }

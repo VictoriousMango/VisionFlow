@@ -1,0 +1,55 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Matrix Chain Multiplication",
+      "x": 400,
+      "y": 50,
+      "w": 340,
+      "h": 52,
+      "center_x": 570,
+      "center_y": 76,
+      "bottom_y": 102,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Implementation TBD",
+      "x": 400,
+      "y": 202,
+      "w": 254,
+      "h": 37,
+      "center_x": 527,
+      "center_y": 220,
+      "bottom_y": 239,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 339,
+      "w": 86,
+      "h": 41,
+      "center_x": 443,
+      "center_y": 359,
+      "bottom_y": 380,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    }
+  ]
+}

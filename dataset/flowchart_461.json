@@ -1,0 +1,167 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Insertion Sort",
+      "x": 400,
+      "y": 50,
+      "w": 216,
+      "h": 40,
+      "center_x": 508,
+      "center_y": 70,
+      "bottom_y": 90,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "i = 1",
+      "x": 400,
+      "y": 190,
+      "w": 101,
+      "h": 41,
+      "center_x": 450,
+      "center_y": 210,
+      "bottom_y": 231,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "diamond",
+      "text": "i < n?",
+      "x": 400,
+      "y": 331,
+      "w": 137,
+      "h": 56,
+      "center_x": 468,
+      "center_y": 359,
+      "bottom_y": 387,
+      "step_type": "decision",
+      "true_branch": 3,
+      "false_branch": 8
+    },
+    {
+      "id": 3,
+      "shape": "rectangle",
+      "text": "key = array[i], j = i-1",
+      "x": 400,
+      "y": 487,
+      "w": 273,
+      "h": 49,
+      "center_x": 536,
+      "center_y": 511,
+      "bottom_y": 536,
+      "step_type": "process"
+    },
+    {
+      "id": 4,
+      "shape": "diamond",
+      "text": "j >= 0 && array[j] > key?",
+      "x": 400,
+      "y": 636,
+      "w": 455,
+      "h": 79,
+      "center_x": 627,
+      "center_y": 675,
+      "bottom_y": 715,
+      "step_type": "decision",
+      "true_branch": 5,
+      "false_branch": 7
+    },
+    {
+      "id": 5,
+      "shape": "rectangle",
+      "text": "array[j+1] = array[j]",
+      "x": 400,
+      "y": 815,
+      "w": 246,
+      "h": 37,
+      "center_x": 523,
+      "center_y": 833,
+      "bottom_y": 852,
+      "step_type": "process"
+    },
+    {
+      "id": 6,
+      "shape": "rectangle",
+      "text": "j = j - 1",
+      "x": 400,
+      "y": 952,
+      "w": 115,
+      "h": 41,
+      "center_x": 457,
+      "center_y": 972,
+      "bottom_y": 993,
+      "step_type": "process"
+    },
+    {
+      "id": 7,
+      "shape": "rectangle",
+      "text": "array[j+1] = key",
+      "x": 400,
+      "y": 1093,
+      "w": 215,
+      "h": 50,
+      "center_x": 507,
+      "center_y": 1118,
+      "bottom_y": 1143,
+      "step_type": "process"
+    },
+    {
+      "id": 8,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 1243,
+      "w": 71,
+      "h": 52,
+      "center_x": 435,
+      "center_y": 1269,
+      "bottom_y": 1295,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": "True"
+    },
+    {
+      "from_id": 2,
+      "to_id": 8,
+      "label": "False"
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": null
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": "True"
+    },
+    {
+      "from_id": 4,
+      "to_id": 7,
+      "label": "False"
+    },
+    {
+      "from_id": 5,
+      "to_id": 6,
+      "label": null
+    }
+  ]
+}

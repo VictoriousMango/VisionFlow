@@ -1,0 +1,228 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Dijkstra",
+      "x": 400,
+      "y": 50,
+      "w": 185,
+      "h": 44,
+      "center_x": 492,
+      "center_y": 72,
+      "bottom_y": 94,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Initialize distances",
+      "x": 400,
+      "y": 194,
+      "w": 217,
+      "h": 38,
+      "center_x": 508,
+      "center_y": 213,
+      "bottom_y": 232,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "rectangle",
+      "text": "Create priority queue",
+      "x": 400,
+      "y": 332,
+      "w": 247,
+      "h": 53,
+      "center_x": 523,
+      "center_y": 358,
+      "bottom_y": 385,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "diamond",
+      "text": "Queue empty?",
+      "x": 400,
+      "y": 485,
+      "w": 255,
+      "h": 59,
+      "center_x": 527,
+      "center_y": 514,
+      "bottom_y": 544,
+      "step_type": "decision",
+      "true_branch": 11,
+      "false_branch": 4
+    },
+    {
+      "id": 4,
+      "shape": "rectangle",
+      "text": "Extract min node u",
+      "x": 400,
+      "y": 644,
+      "w": 254,
+      "h": 45,
+      "center_x": 527,
+      "center_y": 666,
+      "bottom_y": 689,
+      "step_type": "process"
+    },
+    {
+      "id": 5,
+      "shape": "diamond",
+      "text": "u processed?",
+      "x": 400,
+      "y": 789,
+      "w": 238,
+      "h": 64,
+      "center_x": 519,
+      "center_y": 821,
+      "bottom_y": 853,
+      "step_type": "decision",
+      "true_branch": 3,
+      "false_branch": 6
+    },
+    {
+      "id": 6,
+      "shape": "rectangle",
+      "text": "Mark u as processed",
+      "x": 400,
+      "y": 953,
+      "w": 230,
+      "h": 36,
+      "center_x": 515,
+      "center_y": 971,
+      "bottom_y": 989,
+      "step_type": "process"
+    },
+    {
+      "id": 7,
+      "shape": "rectangle",
+      "text": "For each neighbor v",
+      "x": 400,
+      "y": 1089,
+      "w": 234,
+      "h": 39,
+      "center_x": 517,
+      "center_y": 1108,
+      "bottom_y": 1128,
+      "step_type": "process"
+    },
+    {
+      "id": 8,
+      "shape": "diamond",
+      "text": "Shorter path?",
+      "x": 400,
+      "y": 1228,
+      "w": 264,
+      "h": 64,
+      "center_x": 532,
+      "center_y": 1260,
+      "bottom_y": 1292,
+      "step_type": "decision",
+      "true_branch": 9,
+      "false_branch": 3
+    },
+    {
+      "id": 9,
+      "shape": "rectangle",
+      "text": "Update distance to v",
+      "x": 400,
+      "y": 1392,
+      "w": 225,
+      "h": 53,
+      "center_x": 512,
+      "center_y": 1418,
+      "bottom_y": 1445,
+      "step_type": "process"
+    },
+    {
+      "id": 10,
+      "shape": "rectangle",
+      "text": "Add v to queue",
+      "x": 400,
+      "y": 1545,
+      "w": 170,
+      "h": 50,
+      "center_x": 485,
+      "center_y": 1570,
+      "bottom_y": 1595,
+      "step_type": "process"
+    },
+    {
+      "id": 11,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 1695,
+      "w": 56,
+      "h": 52,
+      "center_x": 428,
+      "center_y": 1721,
+      "bottom_y": 1747,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 3,
+      "to_id": 11,
+      "label": "True"
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": "False"
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": null
+    },
+    {
+      "from_id": 5,
+      "to_id": 3,
+      "label": "True"
+    },
+    {
+      "from_id": 5,
+      "to_id": 6,
+      "label": "False"
+    },
+    {
+      "from_id": 6,
+      "to_id": 7,
+      "label": null
+    },
+    {
+      "from_id": 7,
+      "to_id": 8,
+      "label": null
+    },
+    {
+      "from_id": 8,
+      "to_id": 9,
+      "label": "True"
+    },
+    {
+      "from_id": 8,
+      "to_id": 3,
+      "label": "False"
+    },
+    {
+      "from_id": 9,
+      "to_id": 10,
+      "label": null
+    }
+  ]
+}

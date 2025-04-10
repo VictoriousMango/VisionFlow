@@ -1,0 +1,55 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Max Flow Ford Fulkerson",
+      "x": 400,
+      "y": 50,
+      "w": 311,
+      "h": 52,
+      "center_x": 555,
+      "center_y": 76,
+      "bottom_y": 102,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Implementation TBD",
+      "x": 400,
+      "y": 202,
+      "w": 256,
+      "h": 40,
+      "center_x": 528,
+      "center_y": 222,
+      "bottom_y": 242,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 342,
+      "w": 68,
+      "h": 38,
+      "center_x": 434,
+      "center_y": 361,
+      "bottom_y": 380,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    }
+  ]
+}

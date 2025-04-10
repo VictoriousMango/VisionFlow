@@ -1,0 +1,55 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start A Star",
+      "x": 400,
+      "y": 50,
+      "w": 146,
+      "h": 35,
+      "center_x": 473,
+      "center_y": 67,
+      "bottom_y": 85,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Implementation TBD",
+      "x": 400,
+      "y": 185,
+      "w": 246,
+      "h": 44,
+      "center_x": 523,
+      "center_y": 207,
+      "bottom_y": 229,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 329,
+      "w": 69,
+      "h": 40,
+      "center_x": 434,
+      "center_y": 349,
+      "bottom_y": 369,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    }
+  ]
+}

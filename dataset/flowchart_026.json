@@ -1,0 +1,167 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Prim",
+      "x": 400,
+      "y": 50,
+      "w": 149,
+      "h": 42,
+      "center_x": 474,
+      "center_y": 71,
+      "bottom_y": 92,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Initialize priority queue",
+      "x": 400,
+      "y": 192,
+      "w": 270,
+      "h": 44,
+      "center_x": 535,
+      "center_y": 214,
+      "bottom_y": 236,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "diamond",
+      "text": "Queue empty?",
+      "x": 400,
+      "y": 336,
+      "w": 251,
+      "h": 75,
+      "center_x": 525,
+      "center_y": 373,
+      "bottom_y": 411,
+      "step_type": "decision",
+      "true_branch": 8,
+      "false_branch": 3
+    },
+    {
+      "id": 3,
+      "shape": "rectangle",
+      "text": "Extract min edge",
+      "x": 400,
+      "y": 511,
+      "w": 222,
+      "h": 42,
+      "center_x": 511,
+      "center_y": 532,
+      "bottom_y": 553,
+      "step_type": "process"
+    },
+    {
+      "id": 4,
+      "shape": "diamond",
+      "text": "Vertex visited?",
+      "x": 400,
+      "y": 653,
+      "w": 283,
+      "h": 75,
+      "center_x": 541,
+      "center_y": 690,
+      "bottom_y": 728,
+      "step_type": "decision",
+      "true_branch": 2,
+      "false_branch": 5
+    },
+    {
+      "id": 5,
+      "shape": "rectangle",
+      "text": "Mark as visited",
+      "x": 400,
+      "y": 828,
+      "w": 200,
+      "h": 43,
+      "center_x": 500,
+      "center_y": 849,
+      "bottom_y": 871,
+      "step_type": "process"
+    },
+    {
+      "id": 6,
+      "shape": "rectangle",
+      "text": "Add edge to MST",
+      "x": 400,
+      "y": 971,
+      "w": 212,
+      "h": 49,
+      "center_x": 506,
+      "center_y": 995,
+      "bottom_y": 1020,
+      "step_type": "process"
+    },
+    {
+      "id": 7,
+      "shape": "rectangle",
+      "text": "Add adjacent edges to queue",
+      "x": 400,
+      "y": 1120,
+      "w": 332,
+      "h": 37,
+      "center_x": 566,
+      "center_y": 1138,
+      "bottom_y": 1157,
+      "step_type": "process"
+    },
+    {
+      "id": 8,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 1257,
+      "w": 56,
+      "h": 54,
+      "center_x": 428,
+      "center_y": 1284,
+      "bottom_y": 1311,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 8,
+      "label": "True"
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": "False"
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": null
+    },
+    {
+      "from_id": 4,
+      "to_id": 2,
+      "label": "True"
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": "False"
+    },
+    {
+      "from_id": 5,
+      "to_id": 6,
+      "label": null
+    },
+    {
+      "from_id": 6,
+      "to_id": 7,
+      "label": null
+    }
+  ]
+}

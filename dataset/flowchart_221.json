@@ -1,0 +1,185 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start BFS",
+      "x": 400,
+      "y": 50,
+      "w": 135,
+      "h": 48,
+      "center_x": 467,
+      "center_y": 74,
+      "bottom_y": 98,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Initialize queue",
+      "x": 400,
+      "y": 198,
+      "w": 161,
+      "h": 43,
+      "center_x": 480,
+      "center_y": 219,
+      "bottom_y": 241,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "rectangle",
+      "text": "Add start node to queue",
+      "x": 400,
+      "y": 341,
+      "w": 300,
+      "h": 38,
+      "center_x": 550,
+      "center_y": 360,
+      "bottom_y": 379,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "diamond",
+      "text": "Queue empty?",
+      "x": 400,
+      "y": 479,
+      "w": 244,
+      "h": 76,
+      "center_x": 522,
+      "center_y": 517,
+      "bottom_y": 555,
+      "step_type": "decision",
+      "true_branch": 9,
+      "false_branch": 4
+    },
+    {
+      "id": 4,
+      "shape": "rectangle",
+      "text": "Dequeue node",
+      "x": 400,
+      "y": 655,
+      "w": 181,
+      "h": 50,
+      "center_x": 490,
+      "center_y": 680,
+      "bottom_y": 705,
+      "step_type": "process"
+    },
+    {
+      "id": 5,
+      "shape": "diamond",
+      "text": "Node visited?",
+      "x": 400,
+      "y": 805,
+      "w": 235,
+      "h": 57,
+      "center_x": 517,
+      "center_y": 833,
+      "bottom_y": 862,
+      "step_type": "decision",
+      "true_branch": 3,
+      "false_branch": 6
+    },
+    {
+      "id": 6,
+      "shape": "rectangle",
+      "text": "Mark as visited",
+      "x": 400,
+      "y": 962,
+      "w": 182,
+      "h": 48,
+      "center_x": 491,
+      "center_y": 986,
+      "bottom_y": 1010,
+      "step_type": "process"
+    },
+    {
+      "id": 7,
+      "shape": "rectangle",
+      "text": "Process node",
+      "x": 400,
+      "y": 1110,
+      "w": 160,
+      "h": 39,
+      "center_x": 480,
+      "center_y": 1129,
+      "bottom_y": 1149,
+      "step_type": "process"
+    },
+    {
+      "id": 8,
+      "shape": "rectangle",
+      "text": "Add unvisited neighbors to queue",
+      "x": 400,
+      "y": 1249,
+      "w": 359,
+      "h": 47,
+      "center_x": 579,
+      "center_y": 1272,
+      "bottom_y": 1296,
+      "step_type": "process"
+    },
+    {
+      "id": 9,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 1396,
+      "w": 81,
+      "h": 41,
+      "center_x": 440,
+      "center_y": 1416,
+      "bottom_y": 1437,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 3,
+      "to_id": 9,
+      "label": "True"
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": "False"
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": null
+    },
+    {
+      "from_id": 5,
+      "to_id": 3,
+      "label": "True"
+    },
+    {
+      "from_id": 5,
+      "to_id": 6,
+      "label": "False"
+    },
+    {
+      "from_id": 6,
+      "to_id": 7,
+      "label": null
+    },
+    {
+      "from_id": 7,
+      "to_id": 8,
+      "label": null
+    }
+  ]
+}

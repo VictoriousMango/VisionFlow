@@ -1,0 +1,223 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start 0/1 Knapsack",
+      "x": 400,
+      "y": 50,
+      "w": 240,
+      "h": 50,
+      "center_x": 520,
+      "center_y": 75,
+      "bottom_y": 100,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Initialize dp[n+1][W+1]",
+      "x": 400,
+      "y": 200,
+      "w": 291,
+      "h": 40,
+      "center_x": 545,
+      "center_y": 220,
+      "bottom_y": 240,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "rectangle",
+      "text": "i = 1",
+      "x": 400,
+      "y": 340,
+      "w": 111,
+      "h": 44,
+      "center_x": 455,
+      "center_y": 362,
+      "bottom_y": 384,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "diamond",
+      "text": "i <= n?",
+      "x": 400,
+      "y": 484,
+      "w": 174,
+      "h": 76,
+      "center_x": 487,
+      "center_y": 522,
+      "bottom_y": 560,
+      "step_type": "decision",
+      "true_branch": 4,
+      "false_branch": 11
+    },
+    {
+      "id": 4,
+      "shape": "rectangle",
+      "text": "j = 0",
+      "x": 400,
+      "y": 660,
+      "w": 103,
+      "h": 35,
+      "center_x": 451,
+      "center_y": 677,
+      "bottom_y": 695,
+      "step_type": "process"
+    },
+    {
+      "id": 5,
+      "shape": "diamond",
+      "text": "j <= W?",
+      "x": 400,
+      "y": 795,
+      "w": 198,
+      "h": 72,
+      "center_x": 499,
+      "center_y": 831,
+      "bottom_y": 867,
+      "step_type": "decision",
+      "true_branch": 6,
+      "false_branch": 10
+    },
+    {
+      "id": 6,
+      "shape": "diamond",
+      "text": "wt[i-1] <= j?",
+      "x": 400,
+      "y": 967,
+      "w": 273,
+      "h": 63,
+      "center_x": 536,
+      "center_y": 998,
+      "bottom_y": 1030,
+      "step_type": "decision",
+      "true_branch": 7,
+      "false_branch": 9
+    },
+    {
+      "id": 7,
+      "shape": "rectangle",
+      "text": "dp[i][j] = max(val[i-1] + dp[i-1][j-wt[i-1]], dp[i-1][j])",
+      "x": 400,
+      "y": 1130,
+      "w": 618,
+      "h": 35,
+      "center_x": 709,
+      "center_y": 1147,
+      "bottom_y": 1165,
+      "step_type": "process"
+    },
+    {
+      "id": 8,
+      "shape": "rectangle",
+      "text": "j = j + 1",
+      "x": 400,
+      "y": 1265,
+      "w": 164,
+      "h": 49,
+      "center_x": 482,
+      "center_y": 1289,
+      "bottom_y": 1314,
+      "step_type": "process"
+    },
+    {
+      "id": 9,
+      "shape": "rectangle",
+      "text": "dp[i][j] = dp[i-1][j]",
+      "x": 400,
+      "y": 1414,
+      "w": 239,
+      "h": 43,
+      "center_x": 519,
+      "center_y": 1435,
+      "bottom_y": 1457,
+      "step_type": "process"
+    },
+    {
+      "id": 10,
+      "shape": "rectangle",
+      "text": "i = i + 1",
+      "x": 400,
+      "y": 1557,
+      "w": 143,
+      "h": 43,
+      "center_x": 471,
+      "center_y": 1578,
+      "bottom_y": 1600,
+      "step_type": "process"
+    },
+    {
+      "id": 11,
+      "shape": "oval",
+      "text": "End",
+      "x": 400,
+      "y": 1700,
+      "w": 92,
+      "h": 44,
+      "center_x": 446,
+      "center_y": 1722,
+      "bottom_y": 1744,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": null
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": "True"
+    },
+    {
+      "from_id": 3,
+      "to_id": 11,
+      "label": "False"
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": null
+    },
+    {
+      "from_id": 5,
+      "to_id": 6,
+      "label": "True"
+    },
+    {
+      "from_id": 5,
+      "to_id": 10,
+      "label": "False"
+    },
+    {
+      "from_id": 6,
+      "to_id": 7,
+      "label": "True"
+    },
+    {
+      "from_id": 6,
+      "to_id": 9,
+      "label": "False"
+    },
+    {
+      "from_id": 7,
+      "to_id": 8,
+      "label": null
+    }
+  ]
+}
