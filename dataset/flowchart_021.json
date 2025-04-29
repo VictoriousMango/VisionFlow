@@ -3,40 +3,94 @@
     {
       "id": 0,
       "shape": "oval",
-      "text": "Start Edit Distance",
-      "x": 400,
+      "text": "Start Boyer-Moore",
+      "x": 160,
       "y": 50,
-      "w": 204,
-      "h": 40,
-      "center_x": 502,
-      "center_y": 70,
-      "bottom_y": 90,
+      "w": 203,
+      "h": 36,
+      "center_x": 261,
+      "center_y": 68,
+      "bottom_y": 86,
       "step_type": "start"
     },
     {
       "id": 1,
       "shape": "rectangle",
-      "text": "Implementation TBD",
-      "x": 400,
-      "y": 190,
-      "w": 219,
-      "h": 44,
-      "center_x": 509,
-      "center_y": 212,
-      "bottom_y": 234,
+      "text": "Precompute bad character and good suffix rules",
+      "x": 320,
+      "y": 136,
+      "w": 499,
+      "h": 52,
+      "center_x": 569,
+      "center_y": 162,
+      "bottom_y": 188,
       "step_type": "process"
     },
     {
       "id": 2,
-      "shape": "oval",
-      "text": "End",
-      "x": 400,
+      "shape": "rectangle",
+      "text": "i = 0",
+      "x": 480,
+      "y": 238,
+      "w": 121,
+      "h": 46,
+      "center_x": 540,
+      "center_y": 261,
+      "bottom_y": 284,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "diamond",
+      "text": "i <= n-m?",
+      "x": 640,
       "y": 334,
-      "w": 69,
-      "h": 37,
-      "center_x": 434,
-      "center_y": 352,
-      "bottom_y": 371,
+      "w": 239,
+      "h": 69,
+      "center_x": 759,
+      "center_y": 368,
+      "bottom_y": 403,
+      "step_type": "decision",
+      "true_branch": 4,
+      "false_branch": 6
+    },
+    {
+      "id": 4,
+      "shape": "rectangle",
+      "text": "Align pattern, check mismatch",
+      "x": 160,
+      "y": 453,
+      "w": 350,
+      "h": 44,
+      "center_x": 335,
+      "center_y": 475,
+      "bottom_y": 497,
+      "step_type": "process"
+    },
+    {
+      "id": 5,
+      "shape": "rectangle",
+      "text": "Shift pattern using rules",
+      "x": 320,
+      "y": 547,
+      "w": 273,
+      "h": 36,
+      "center_x": 456,
+      "center_y": 565,
+      "bottom_y": 583,
+      "step_type": "process"
+    },
+    {
+      "id": 6,
+      "shape": "oval",
+      "text": "End Boyer-Moore",
+      "x": 480,
+      "y": 633,
+      "w": 206,
+      "h": 48,
+      "center_x": 583,
+      "center_y": 657,
+      "bottom_y": 681,
       "step_type": "end"
     }
   ],
@@ -49,6 +103,26 @@
     {
       "from_id": 1,
       "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": null
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": "True"
+    },
+    {
+      "from_id": 3,
+      "to_id": 6,
+      "label": "False"
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
       "label": null
     }
   ]

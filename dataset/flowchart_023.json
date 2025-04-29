@@ -3,40 +3,53 @@
     {
       "id": 0,
       "shape": "oval",
-      "text": "Start Min Cut",
-      "x": 400,
+      "text": "Start Matrix Chain Multiplication",
+      "x": 160,
       "y": 50,
-      "w": 188,
-      "h": 48,
-      "center_x": 494,
-      "center_y": 74,
-      "bottom_y": 98,
+      "w": 330,
+      "h": 50,
+      "center_x": 325,
+      "center_y": 75,
+      "bottom_y": 100,
       "step_type": "start"
     },
     {
       "id": 1,
       "shape": "rectangle",
-      "text": "Implementation TBD",
-      "x": 400,
-      "y": 198,
-      "w": 247,
-      "h": 48,
-      "center_x": 523,
-      "center_y": 222,
-      "bottom_y": 246,
+      "text": "Initialize dp table",
+      "x": 320,
+      "y": 150,
+      "w": 206,
+      "h": 54,
+      "center_x": 423,
+      "center_y": 177,
+      "bottom_y": 204,
       "step_type": "process"
     },
     {
       "id": 2,
+      "shape": "rectangle",
+      "text": "Fill dp using minimum cost",
+      "x": 480,
+      "y": 254,
+      "w": 323,
+      "h": 51,
+      "center_x": 641,
+      "center_y": 279,
+      "bottom_y": 305,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
       "shape": "oval",
-      "text": "End",
-      "x": 400,
-      "y": 346,
-      "w": 63,
-      "h": 44,
-      "center_x": 431,
-      "center_y": 368,
-      "bottom_y": 390,
+      "text": "End Matrix Chain Multiplication",
+      "x": 640,
+      "y": 355,
+      "w": 323,
+      "h": 36,
+      "center_x": 801,
+      "center_y": 373,
+      "bottom_y": 391,
       "step_type": "end"
     }
   ],
@@ -49,6 +62,11 @@
     {
       "from_id": 1,
       "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
       "label": null
     }
   ]

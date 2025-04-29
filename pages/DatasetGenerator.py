@@ -24,7 +24,7 @@ with st.sidebar:
     obj1 = GenerateDataset()
     obj2 = J2C()
     # Pipelines
-    if st.button("Start Pipeline", disabled=True):
+    if st.button("Start Pipeline", disabled=False):
         with st.status("Generating Datasets"):
             obj1.CreateDataset(DatasetNum)
         with st.status("Creating TF-Records"):
@@ -34,16 +34,8 @@ with st.sidebar:
         with st.status("Training and Validation Set"):
             obj2.TrainValSplit()
     DatasetIndex = st.number_input(label="Dataset Index", min_value=0, max_value=DatasetNum-1 ,value=0, step=1)
-    if st.button("Run Create COCO TF Record"):
-        with st.status("Creating COCO TF Record"):
-            command = "python ../models/research/object_detection/dataset_tools/create_coco_tf_record.py \
-        --logtostderr \
-        --image_dir=dataset \
-        --object_annotations_file=dataset/instances_train.json \
-        --output_file_prefix=tfrecords/train \
-        --num_shards=1"
-            subprocess.run(command)
-    st.button("Empty Datasets", on_click=EmptyDirectroy, disabled=True)
+
+    st.button("Empty Datasets", on_click=EmptyDirectroy, disabled=False)
 
 # View Dataset
 tab1, tab2, tab3, tab4 = st.tabs(["Dataset", "Annotations", "COCO Format Dataset", "Train Validation Split"])

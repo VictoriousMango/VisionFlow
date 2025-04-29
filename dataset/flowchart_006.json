@@ -3,40 +3,53 @@
     {
       "id": 0,
       "shape": "oval",
-      "text": "Start Hamiltonian Cycle",
-      "x": 400,
+      "text": "Start Karger's Min Cut",
+      "x": 160,
       "y": 50,
-      "w": 256,
-      "h": 45,
-      "center_x": 528,
-      "center_y": 72,
-      "bottom_y": 95,
+      "w": 237,
+      "h": 38,
+      "center_x": 278,
+      "center_y": 69,
+      "bottom_y": 88,
       "step_type": "start"
     },
     {
       "id": 1,
       "shape": "rectangle",
-      "text": "Implementation TBD",
-      "x": 400,
-      "y": 195,
-      "w": 227,
-      "h": 42,
-      "center_x": 513,
-      "center_y": 216,
-      "bottom_y": 237,
+      "text": "Contract random edges until 2 nodes remain",
+      "x": 320,
+      "y": 138,
+      "w": 504,
+      "h": 40,
+      "center_x": 572,
+      "center_y": 158,
+      "bottom_y": 178,
       "step_type": "process"
     },
     {
       "id": 2,
+      "shape": "rectangle",
+      "text": "Count cut edges",
+      "x": 480,
+      "y": 228,
+      "w": 195,
+      "h": 49,
+      "center_x": 577,
+      "center_y": 252,
+      "bottom_y": 277,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
       "shape": "oval",
-      "text": "End",
-      "x": 400,
-      "y": 337,
-      "w": 73,
-      "h": 53,
-      "center_x": 436,
-      "center_y": 363,
-      "bottom_y": 390,
+      "text": "End Karger's Min Cut",
+      "x": 640,
+      "y": 327,
+      "w": 254,
+      "h": 48,
+      "center_x": 767,
+      "center_y": 351,
+      "bottom_y": 375,
       "step_type": "end"
     }
   ],
@@ -49,6 +62,11 @@
     {
       "from_id": 1,
       "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
       "label": null
     }
   ]

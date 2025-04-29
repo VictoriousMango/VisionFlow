@@ -3,40 +3,137 @@
     {
       "id": 0,
       "shape": "oval",
-      "text": "Start Euler Path",
-      "x": 400,
+      "text": "Start Selection Sort",
+      "x": 160,
       "y": 50,
-      "w": 207,
-      "h": 39,
-      "center_x": 503,
-      "center_y": 69,
-      "bottom_y": 89,
+      "w": 220,
+      "h": 41,
+      "center_x": 270,
+      "center_y": 70,
+      "bottom_y": 91,
       "step_type": "start"
     },
     {
       "id": 1,
       "shape": "rectangle",
-      "text": "Implementation TBD",
-      "x": 400,
-      "y": 189,
-      "w": 210,
-      "h": 54,
-      "center_x": 505,
-      "center_y": 216,
-      "bottom_y": 243,
+      "text": "i = 0",
+      "x": 320,
+      "y": 141,
+      "w": 119,
+      "h": 47,
+      "center_x": 379,
+      "center_y": 164,
+      "bottom_y": 188,
       "step_type": "process"
     },
     {
       "id": 2,
+      "shape": "diamond",
+      "text": "i < n-1?",
+      "x": 480,
+      "y": 238,
+      "w": 169,
+      "h": 75,
+      "center_x": 564,
+      "center_y": 275,
+      "bottom_y": 313,
+      "step_type": "decision",
+      "true_branch": 3,
+      "false_branch": 8
+    },
+    {
+      "id": 3,
+      "shape": "rectangle",
+      "text": "min_idx = i",
+      "x": 640,
+      "y": 363,
+      "w": 132,
+      "h": 50,
+      "center_x": 706,
+      "center_y": 388,
+      "bottom_y": 413,
+      "step_type": "process"
+    },
+    {
+      "id": 4,
+      "shape": "rectangle",
+      "text": "j = i + 1",
+      "x": 160,
+      "y": 463,
+      "w": 144,
+      "h": 51,
+      "center_x": 232,
+      "center_y": 488,
+      "bottom_y": 514,
+      "step_type": "process"
+    },
+    {
+      "id": 5,
+      "shape": "diamond",
+      "text": "j < n?",
+      "x": 320,
+      "y": 564,
+      "w": 130,
+      "h": 80,
+      "center_x": 385,
+      "center_y": 604,
+      "bottom_y": 644,
+      "step_type": "decision",
+      "true_branch": 6,
+      "false_branch": 7
+    },
+    {
+      "id": 6,
+      "shape": "diamond",
+      "text": "array[j] < array[min_idx]?",
+      "x": 480,
+      "y": 694,
+      "w": 453,
+      "h": 73,
+      "center_x": 706,
+      "center_y": 730,
+      "bottom_y": 767,
+      "step_type": "decision",
+      "true_branch": 7,
+      "false_branch": 5
+    },
+    {
+      "id": 7,
+      "shape": "rectangle",
+      "text": "min_idx = j",
+      "x": 640,
+      "y": 817,
+      "w": 158,
+      "h": 43,
+      "center_x": 719,
+      "center_y": 838,
+      "bottom_y": 860,
+      "step_type": "process"
+    },
+    {
+      "id": 8,
+      "shape": "rectangle",
+      "text": "Swap array[i] and array[min_idx]",
+      "x": 160,
+      "y": 910,
+      "w": 376,
+      "h": 50,
+      "center_x": 348,
+      "center_y": 935,
+      "bottom_y": 960,
+      "step_type": "process"
+    },
+    {
+      "id": 9,
       "shape": "oval",
-      "text": "End",
-      "x": 400,
-      "y": 343,
-      "w": 58,
-      "h": 42,
-      "center_x": 429,
-      "center_y": 364,
-      "bottom_y": 385,
+      "text": "End Selection Sort",
+      "x": 320,
+      "y": 1010,
+      "w": 207,
+      "h": 54,
+      "center_x": 423,
+      "center_y": 1037,
+      "bottom_y": 1064,
       "step_type": "end"
     }
   ],
@@ -49,6 +146,46 @@
     {
       "from_id": 1,
       "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": "True"
+    },
+    {
+      "from_id": 2,
+      "to_id": 8,
+      "label": "False"
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": null
+    },
+    {
+      "from_id": 5,
+      "to_id": 6,
+      "label": "True"
+    },
+    {
+      "from_id": 5,
+      "to_id": 7,
+      "label": "False"
+    },
+    {
+      "from_id": 6,
+      "to_id": 7,
+      "label": "True"
+    },
+    {
+      "from_id": 6,
+      "to_id": 5,
+      "label": "False"
+    },
+    {
+      "from_id": 8,
+      "to_id": 9,
       "label": null
     }
   ]

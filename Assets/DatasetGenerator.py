@@ -5,39 +5,42 @@ import json
 from Assets.PseudoAlgo import ALGORITHM_TEMPLATES
 import sys
 
+import cv2
+import numpy as np
+import random
+
+
 class Generator:
     def __init__(self, width=800, height=1000, background_color=(255, 255, 255)):
-        # Create a blank white image (default 800x1000 for flowcharts)
         self.img = np.full((height, width, 3), background_color, dtype=np.uint8)
         self.width = width
         self.height = height
-        self.elements = []  # To keep track of all elements
-        self.connections = []  # To store connections between elements
+        self.elements = []
+        self.connections = []
         self.font = cv2.FONT_HERSHEY_SIMPLEX
         self.font_scale = 0.6
         self.font_thickness = 1
-        self.padding = 10  # Padding inside shapes
+        self.padding = 10
+        self.min_spacing = 50  # Minimum vertical spacing to prevent overlap
 
-    """Calculate the size needed for text"""
     def get_text_size(self, text):
         (text_width, text_height), baseline = cv2.getTextSize(
             text, self.font, self.font_scale, self.font_thickness)
         return text_width, text_height
 
-    """Draw a rectangle with text inside"""
     def rectangle(self, text, position=None):
         text_width, text_height = self.get_text_size(text)
         min_width = text_width + 2 * self.padding
         min_height = text_height + 2 * self.padding
 
         if position is None:
-            x = (self.width - min_width) // 2
-            y = 50 + len(self.elements) * 100
+            x = (self.width // (len(self.elements) + 1)) * (len(self.elements) % 4 + 1)  # Spread horizontally
+            y = 50 + max((e["bottom_y"] for e in self.elements), default=0) + self.min_spacing
         else:
             x, y = position
 
-        w = max(min_width, random.randint(min_width, min_width + 50))
-        h = max(min_height, random.randint(min_height, min_height + 20))
+        w = max(min_width, min_width + random.randint(0, 50))
+        h = max(min_height, min_height + random.randint(0, 20))
 
         cv2.rectangle(self.img, (x, y), (x + w, y + h), (0, 0, 0), 2)
         text_x = x + (w - text_width) // 2
@@ -59,28 +62,27 @@ class Generator:
         self.elements.append(element)
         return element
 
-    """Draw a diamond with text inside"""
     def diamond(self, text, position=None):
         text_width, text_height = self.get_text_size(text)
         min_width = int(1.5 * (text_width + 2 * self.padding))
         min_height = int(1.5 * (text_height + 2 * self.padding))
 
         if position is None:
-            x = (self.width - min_width) // 2
-            y = 50 + len(self.elements) * 100
+            x = (self.width // (len(self.elements) + 1)) * (len(self.elements) % 4 + 1)
+            y = 50 + max((e["bottom_y"] for e in self.elements), default=0) + self.min_spacing
         else:
             x, y = position
 
-        w = max(min_width, random.randint(min_width, min_width + 50))
-        h = max(min_height, random.randint(min_height, min_height + 30))
+        w = max(min_width, min_width + random.randint(0, 50))
+        h = max(min_height, min_height + random.randint(0, 30))
 
         center_x = x + w // 2
         center_y = y + h // 2
         points = np.array([
-            [center_x, y],  # top
-            [x + w, center_y],  # right
-            [center_x, y + h],  # bottom
-            [x, center_y]  # left
+            [center_x, y],
+            [x + w, center_y],
+            [center_x, y + h],
+            [x, center_y]
         ], np.int32)
 
         cv2.polylines(self.img, [points], True, (0, 0, 0), 2)
@@ -102,24 +104,22 @@ class Generator:
         self.elements.append(element)
         return element
 
-    """Create a rounded rectangle for start/end instead of oval"""
     def oval(self, text, position=None):
         text_width, text_height = self.get_text_size(text)
         min_width = text_width + 2 * self.padding
         min_height = text_height + 2 * self.padding
 
         if position is None:
-            x = (self.width - min_width) // 2
-            y = 50 + len(self.elements) * 100
+            x = (self.width // (len(self.elements) + 1)) * (len(self.elements) % 4 + 1)
+            y = 50 + max((e["bottom_y"] for e in self.elements), default=0) + self.min_spacing
         else:
             x, y = position
 
-        w = max(min_width, random.randint(min_width, min_width + 40))
-        h = max(min_height, random.randint(min_height, min_height + 20))
+        w = max(min_width, min_width + random.randint(0, 40))
+        h = max(min_height, min_height + random.randint(0, 20))
 
         center_x = x + w // 2
         center_y = y + h // 2
-
         cv2.rectangle(self.img, (x, y), (x + w, y + h), (0, 0, 0), 2)
         cv2.putText(self.img, text, (center_x - text_width // 2, center_y + text_height // 2),
                     self.font, self.font_scale, (0, 0, 0), self.font_thickness)
@@ -139,27 +139,26 @@ class Generator:
         self.elements.append(element)
         return element
 
-    """Draw a parallelogram (for input/output operations)"""
     def parallelogram(self, text, position=None):
         text_width, text_height = self.get_text_size(text)
         min_width = text_width + 3 * self.padding
         min_height = text_height + 2 * self.padding
 
         if position is None:
-            x = (self.width - min_width) // 2
-            y = 50 + len(self.elements) * 100
+            x = (self.width // (len(self.elements) + 1)) * (len(self.elements) % 4 + 1)
+            y = 50 + max((e["bottom_y"] for e in self.elements), default=0) + self.min_spacing
         else:
             x, y = position
 
-        w = max(min_width, random.randint(min_width, min_width + 50))
-        h = max(min_height, random.randint(min_height, min_height + 20))
+        w = max(min_width, min_width + random.randint(0, 50))
+        h = max(min_height, min_height + random.randint(0, 20))
 
         slant = int(h * 0.3)
         points = np.array([
-            [x + slant, y],  # top-left
-            [x + w, y],  # top-right
-            [x + w - slant, y + h],  # bottom-right
-            [x, y + h]  # bottom-left
+            [x + slant, y],
+            [x + w, y],
+            [x + w - slant, y + h],
+            [x, y + h]
         ], np.int32)
 
         cv2.polylines(self.img, [points], True, (0, 0, 0), 2)
@@ -183,12 +182,29 @@ class Generator:
         self.elements.append(element)
         return element
 
-    """Add an arrow connecting two elements"""
     def add_arrow(self, from_element, to_element, label=None):
+        # Start from the bottom center of from_element
         start_x = from_element["center_x"]
-        start_y = from_element["y"] + from_element["h"]
+        start_y = from_element["bottom_y"]
+
+        # End at the top center of to_element, avoiding unconnected shapes
         end_x = to_element["center_x"]
         end_y = to_element["y"]
+
+        # Check for potential crossings and adjust path if needed
+        min_x = min(from_element["x"], to_element["x"])
+        max_x = max(from_element["x"] + from_element["w"], to_element["x"] + to_element["w"])
+        for elem in self.elements:
+            if elem["id"] != from_element["id"] and elem["id"] != to_element["id"]:
+                if (min_x <= elem["center_x"] <= max_x and
+                        min(start_y, end_y) < elem["center_y"] < max(start_y, end_y)):
+                    # Shift the path to the side to avoid crossing
+                    if from_element["center_x"] < self.width // 2:
+                        start_x += 50
+                        end_x += 50
+                    else:
+                        start_x -= 50
+                        end_x -= 50
 
         cv2.arrowedLine(self.img, (start_x, start_y), (end_x, end_y), (0, 0, 0), 2, tipLength=0.03)
 
@@ -203,57 +219,58 @@ class Generator:
             cv2.putText(self.img, label, (mid_x - text_width // 2, mid_y + text_height // 2),
                         self.font, self.font_scale, (0, 0, 0), self.font_thickness)
 
-        connection = {
-            "from_id": from_element["id"],
-            "to_id": to_element["id"],
-            "label": label
-        }
-        self.connections.append(connection)
-        return connection
+        self.connections.append({"from_id": from_element["id"], "to_id": to_element["id"], "label": label})
+        return self.connections[-1]
 
-    """Add True/False branches from a decision diamond"""
     def add_decision_branches(self, decision_element, true_element, false_element):
+        # True branch from right center to true_element
         true_start_x = decision_element["x"] + decision_element["w"]
         true_start_y = decision_element["center_y"]
-        true_mid_x = true_start_x + 30
-        true_mid_y = true_start_y
         true_end_x = true_element["center_x"]
         true_end_y = true_element["y"]
 
-        cv2.line(self.img, (true_start_x, true_start_y), (true_mid_x, true_mid_y), (0, 0, 0), 2)
-        cv2.arrowedLine(self.img, (true_mid_x, true_mid_y), (true_end_x, true_end_y), (0, 0, 0), 2, tipLength=0.03)
-        cv2.putText(self.img, "True", (true_start_x + 5, true_start_y - 5),
-                    self.font, self.font_scale, (0, 0, 0), self.font_thickness)
-
+        # False branch from bottom center to false_element
         false_start_x = decision_element["center_x"]
         false_start_y = decision_element["y"] + decision_element["h"]
         false_end_x = false_element["center_x"]
         false_end_y = false_element["y"]
 
-        cv2.arrowedLine(self.img, (false_start_x, false_start_y), (false_end_x, false_end_y), (0, 0, 0), 2,
-                        tipLength=0.03)
+        # Avoid crossing by checking other elements
+        for elem in self.elements:
+            if elem["id"] != decision_element["id"] and elem["id"] != true_element["id"]:
+                if (min(true_start_x, true_end_x) <= elem["center_x"] <= max(true_start_x, true_end_x) and
+                        min(true_start_y, true_end_y) < elem["center_y"] < max(true_start_y, true_end_y)):
+                    true_end_x += 50 if true_end_x < self.width // 2 else -50
+
+            if elem["id"] != decision_element["id"] and elem["id"] != false_element["id"]:
+                if (min(false_start_x, false_end_x) <= elem["center_x"] <= max(false_start_x, false_end_x) and
+                        min(false_start_y, false_end_y) < elem["center_y"] < max(false_start_y, false_end_y)):
+                    false_end_x += 50 if false_end_x < self.width // 2 else -50
+
+        cv2.line(self.img, (true_start_x, true_start_y), (true_end_x, true_end_y), (0, 0, 0), 2)
+        cv2.arrowedLine(self.img, (true_end_x, true_end_y), (true_element["center_x"], true_element["y"]),
+                        (0, 0, 0), 2, tipLength=0.03)
+        cv2.putText(self.img, "True", (true_start_x + 5, true_start_y - 5),
+                    self.font, self.font_scale, (0, 0, 0), self.font_thickness)
+
+        cv2.arrowedLine(self.img, (false_start_x, false_start_y), (false_end_x, false_end_y),
+                        (0, 0, 0), 2, tipLength=0.03)
+        cv2.arrowedLine(self.img, (false_end_x, false_end_y), (false_element["center_x"], false_element["y"]),
+                        (0, 0, 0), 2, tipLength=0.03)
         cv2.putText(self.img, "False", (false_start_x + 5, false_start_y + 15),
                     self.font, self.font_scale, (0, 0, 0), self.font_thickness)
 
-        self.connections.append({
-            "from_id": decision_element["id"],
-            "to_id": true_element["id"],
-            "label": "True"
-        })
-        self.connections.append({
-            "from_id": decision_element["id"],
-            "to_id": false_element["id"],
-            "label": "False"
-        })
+        self.connections.append({"from_id": decision_element["id"], "to_id": true_element["id"], "label": "True"})
+        self.connections.append({"from_id": decision_element["id"], "to_id": false_element["id"], "label": "False"})
 
-    """Create a complete flowchart from a list of algorithm steps"""
     def create_algorithm_flowchart(self, algorithm_steps):
         y_position = 50
-        x_center = self.width // 2
-        step_spacing = 100
+        x_positions = [self.width // 5, 2 * self.width // 5, 3 * self.width // 5, 4 * self.width // 5]  # 4 columns
 
         for i, step in enumerate(algorithm_steps):
-            position = (x_center, y_position)
+            # Assign x based on column to spread elements
+            x = x_positions[i % len(x_positions)]
+            position = (x, y_position)
 
             if step["type"] == "start" or step["type"] == "end":
                 element = self.oval(step["text"], position)
@@ -264,17 +281,15 @@ class Generator:
             elif step["type"] == "input" or step["type"] == "output":
                 element = self.parallelogram(step["text"], position)
 
-            y_position = element["bottom_y"] + step_spacing
+            y_position = max(y_position, element["bottom_y"]) + self.min_spacing  # Adjust y to prevent overlap
             element["step_type"] = step["type"]
 
             if step["type"] == "decision" and "true_branch" in step and "false_branch" in step:
                 element["true_branch"] = step["true_branch"]
                 element["false_branch"] = step["false_branch"]
 
+        # Connect elements based on sequence and decisions
         for i, element in enumerate(self.elements):
-            if i == len(self.elements) - 1:
-                continue
-
             if element["step_type"] == "decision":
                 true_element = self.elements[element["true_branch"]]
                 false_element = self.elements[element["false_branch"]]
@@ -285,27 +300,18 @@ class Generator:
                     if "true_branch" in e and (e["true_branch"] == i + 1 or e["false_branch"] == i + 1):
                         is_branch_target = True
                         break
-
-                if not is_branch_target:
-                    next_index = i + 1
-                    while next_index < len(self.elements):
-                        next_element = self.elements[next_index]
-                        self.add_arrow(element, next_element)
-                        break
+                if not is_branch_target and i < len(self.elements) - 1:
+                    next_element = self.elements[i + 1]
+                    self.add_arrow(element, next_element)
 
         return self.elements, self.connections
 
-    """Save the image to file"""
     def save_image(self, filename):
         cv2.imwrite(filename, self.img)
         return filename
 
-    """Get labeled data for all elements in the flowchart"""
     def get_labeled_data(self):
-        return {
-            "elements": self.elements,
-            "connections": self.connections
-        }
+        return {"elements": self.elements, "connections": self.connections}
 
 
 class GenerateDataset():

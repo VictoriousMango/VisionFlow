@@ -3,40 +3,109 @@
     {
       "id": 0,
       "shape": "oval",
-      "text": "Start Articulation Points",
-      "x": 400,
+      "text": "Start A*",
+      "x": 160,
       "y": 50,
-      "w": 251,
-      "h": 37,
-      "center_x": 525,
-      "center_y": 68,
-      "bottom_y": 87,
+      "w": 112,
+      "h": 51,
+      "center_x": 216,
+      "center_y": 75,
+      "bottom_y": 101,
       "step_type": "start"
     },
     {
       "id": 1,
       "shape": "rectangle",
-      "text": "Implementation TBD",
-      "x": 400,
-      "y": 187,
-      "w": 244,
-      "h": 40,
-      "center_x": 522,
-      "center_y": 207,
-      "bottom_y": 227,
+      "text": "Initialize open set with start node",
+      "x": 320,
+      "y": 151,
+      "w": 380,
+      "h": 52,
+      "center_x": 510,
+      "center_y": 177,
+      "bottom_y": 203,
       "step_type": "process"
     },
     {
       "id": 2,
+      "shape": "diamond",
+      "text": "Open set not empty?",
+      "x": 480,
+      "y": 253,
+      "w": 359,
+      "h": 55,
+      "center_x": 659,
+      "center_y": 280,
+      "bottom_y": 308,
+      "step_type": "decision",
+      "true_branch": 3,
+      "false_branch": 7
+    },
+    {
+      "id": 3,
+      "shape": "rectangle",
+      "text": "Get node with minimum f-score",
+      "x": 640,
+      "y": 358,
+      "w": 357,
+      "h": 40,
+      "center_x": 818,
+      "center_y": 378,
+      "bottom_y": 398,
+      "step_type": "process"
+    },
+    {
+      "id": 4,
+      "shape": "diamond",
+      "text": "Goal reached?",
+      "x": 160,
+      "y": 448,
+      "w": 279,
+      "h": 74,
+      "center_x": 299,
+      "center_y": 485,
+      "bottom_y": 522,
+      "step_type": "decision",
+      "true_branch": 6,
+      "false_branch": 5
+    },
+    {
+      "id": 5,
+      "shape": "rectangle",
+      "text": "Expand node, update neighbors",
+      "x": 320,
+      "y": 572,
+      "w": 360,
+      "h": 40,
+      "center_x": 500,
+      "center_y": 592,
+      "bottom_y": 612,
+      "step_type": "process"
+    },
+    {
+      "id": 6,
+      "shape": "rectangle",
+      "text": "Return path",
+      "x": 480,
+      "y": 662,
+      "w": 165,
+      "h": 42,
+      "center_x": 562,
+      "center_y": 683,
+      "bottom_y": 704,
+      "step_type": "process"
+    },
+    {
+      "id": 7,
       "shape": "oval",
-      "text": "End",
-      "x": 400,
-      "y": 327,
-      "w": 71,
-      "h": 49,
-      "center_x": 435,
-      "center_y": 351,
-      "bottom_y": 376,
+      "text": "End A*",
+      "x": 640,
+      "y": 754,
+      "w": 91,
+      "h": 35,
+      "center_x": 685,
+      "center_y": 771,
+      "bottom_y": 789,
       "step_type": "end"
     }
   ],
@@ -50,6 +119,31 @@
       "from_id": 1,
       "to_id": 2,
       "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": "True"
+    },
+    {
+      "from_id": 2,
+      "to_id": 7,
+      "label": "False"
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": null
+    },
+    {
+      "from_id": 4,
+      "to_id": 6,
+      "label": "True"
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": "False"
     }
   ]
 }

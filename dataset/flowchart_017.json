@@ -3,40 +3,81 @@
     {
       "id": 0,
       "shape": "oval",
-      "text": "Start Traveling Salesman Dp",
-      "x": 400,
+      "text": "Start DFS",
+      "x": 160,
       "y": 50,
-      "w": 306,
-      "h": 49,
-      "center_x": 553,
-      "center_y": 74,
-      "bottom_y": 99,
+      "w": 129,
+      "h": 34,
+      "center_x": 224,
+      "center_y": 67,
+      "bottom_y": 84,
       "step_type": "start"
     },
     {
       "id": 1,
       "shape": "rectangle",
-      "text": "Implementation TBD",
-      "x": 400,
-      "y": 199,
-      "w": 233,
-      "h": 50,
-      "center_x": 516,
-      "center_y": 224,
-      "bottom_y": 249,
+      "text": "Mark current node as visited",
+      "x": 320,
+      "y": 134,
+      "w": 335,
+      "h": 43,
+      "center_x": 487,
+      "center_y": 155,
+      "bottom_y": 177,
       "step_type": "process"
     },
     {
       "id": 2,
+      "shape": "rectangle",
+      "text": "Process current node",
+      "x": 480,
+      "y": 227,
+      "w": 269,
+      "h": 37,
+      "center_x": 614,
+      "center_y": 245,
+      "bottom_y": 264,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "diamond",
+      "text": "Has unvisited neighbors?",
+      "x": 640,
+      "y": 314,
+      "w": 422,
+      "h": 56,
+      "center_x": 851,
+      "center_y": 342,
+      "bottom_y": 370,
+      "step_type": "decision",
+      "true_branch": 4,
+      "false_branch": 5
+    },
+    {
+      "id": 4,
+      "shape": "rectangle",
+      "text": "Recursively DFS on unvisited neighbor",
+      "x": 160,
+      "y": 420,
+      "w": 384,
+      "h": 46,
+      "center_x": 352,
+      "center_y": 443,
+      "bottom_y": 466,
+      "step_type": "process"
+    },
+    {
+      "id": 5,
       "shape": "oval",
-      "text": "End",
-      "x": 400,
-      "y": 349,
-      "w": 62,
-      "h": 39,
-      "center_x": 431,
-      "center_y": 368,
-      "bottom_y": 388,
+      "text": "End DFS",
+      "x": 320,
+      "y": 516,
+      "w": 105,
+      "h": 36,
+      "center_x": 372,
+      "center_y": 534,
+      "bottom_y": 552,
       "step_type": "end"
     }
   ],
@@ -50,6 +91,21 @@
       "from_id": 1,
       "to_id": 2,
       "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": null
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": "True"
+    },
+    {
+      "from_id": 3,
+      "to_id": 5,
+      "label": "False"
     }
   ]
 }

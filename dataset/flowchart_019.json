@@ -3,40 +3,137 @@
     {
       "id": 0,
       "shape": "oval",
-      "text": "Start Z Algorithm",
-      "x": 400,
+      "text": "Start KMP",
+      "x": 160,
       "y": 50,
-      "w": 194,
-      "h": 47,
-      "center_x": 497,
-      "center_y": 73,
-      "bottom_y": 97,
+      "w": 142,
+      "h": 44,
+      "center_x": 231,
+      "center_y": 72,
+      "bottom_y": 94,
       "step_type": "start"
     },
     {
       "id": 1,
       "shape": "rectangle",
-      "text": "Implementation TBD",
-      "x": 400,
-      "y": 197,
-      "w": 244,
-      "h": 39,
-      "center_x": 522,
-      "center_y": 216,
-      "bottom_y": 236,
+      "text": "Compute LPS array for pattern",
+      "x": 320,
+      "y": 144,
+      "w": 361,
+      "h": 51,
+      "center_x": 500,
+      "center_y": 169,
+      "bottom_y": 195,
       "step_type": "process"
     },
     {
       "id": 2,
+      "shape": "rectangle",
+      "text": "i = 0, j = 0",
+      "x": 480,
+      "y": 245,
+      "w": 162,
+      "h": 40,
+      "center_x": 561,
+      "center_y": 265,
+      "bottom_y": 285,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "diamond",
+      "text": "i < n?",
+      "x": 640,
+      "y": 335,
+      "w": 134,
+      "h": 63,
+      "center_x": 707,
+      "center_y": 366,
+      "bottom_y": 398,
+      "step_type": "decision",
+      "true_branch": 4,
+      "false_branch": 9
+    },
+    {
+      "id": 4,
+      "shape": "diamond",
+      "text": "text[i] == pattern[j]?",
+      "x": 160,
+      "y": 448,
+      "w": 391,
+      "h": 59,
+      "center_x": 355,
+      "center_y": 477,
+      "bottom_y": 507,
+      "step_type": "decision",
+      "true_branch": 5,
+      "false_branch": 6
+    },
+    {
+      "id": 5,
+      "shape": "rectangle",
+      "text": "i = i + 1, j = j + 1",
+      "x": 320,
+      "y": 557,
+      "w": 267,
+      "h": 52,
+      "center_x": 453,
+      "center_y": 583,
+      "bottom_y": 609,
+      "step_type": "process"
+    },
+    {
+      "id": 6,
+      "shape": "diamond",
+      "text": "j == m?",
+      "x": 480,
+      "y": 659,
+      "w": 164,
+      "h": 75,
+      "center_x": 562,
+      "center_y": 696,
+      "bottom_y": 734,
+      "step_type": "decision",
+      "true_branch": 7,
+      "false_branch": 3
+    },
+    {
+      "id": 7,
+      "shape": "rectangle",
+      "text": "Report match at (i-m)",
+      "x": 640,
+      "y": 784,
+      "w": 273,
+      "h": 40,
+      "center_x": 776,
+      "center_y": 804,
+      "bottom_y": 824,
+      "step_type": "process"
+    },
+    {
+      "id": 8,
+      "shape": "rectangle",
+      "text": "j = lps[j-1] if j > 0 else 0",
+      "x": 160,
+      "y": 874,
+      "w": 293,
+      "h": 51,
+      "center_x": 306,
+      "center_y": 899,
+      "bottom_y": 925,
+      "step_type": "process"
+    },
+    {
+      "id": 9,
       "shape": "oval",
-      "text": "End",
-      "x": 400,
-      "y": 336,
-      "w": 90,
-      "h": 49,
-      "center_x": 445,
-      "center_y": 360,
-      "bottom_y": 385,
+      "text": "End KMP",
+      "x": 320,
+      "y": 975,
+      "w": 126,
+      "h": 42,
+      "center_x": 383,
+      "center_y": 996,
+      "bottom_y": 1017,
       "step_type": "end"
     }
   ],
@@ -49,6 +146,41 @@
     {
       "from_id": 1,
       "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": "True"
+    },
+    {
+      "from_id": 3,
+      "to_id": 9,
+      "label": "False"
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": "True"
+    },
+    {
+      "from_id": 4,
+      "to_id": 6,
+      "label": "False"
+    },
+    {
+      "from_id": 6,
+      "to_id": 7,
+      "label": "True"
+    },
+    {
+      "from_id": 6,
+      "to_id": 3,
+      "label": "False"
+    },
+    {
+      "from_id": 7,
+      "to_id": 8,
       "label": null
     }
   ]
