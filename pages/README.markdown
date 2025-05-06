@@ -1,170 +1,172 @@
-# Image Preprocessing, OCR, Workflow Analysis, and Dataset Generation App
+# VisionFlow: Workflow Diagram Analyzer
 
-This project consists of two main components: `app.py`, a Streamlit application for image preprocessing, OCR, and workflow analysis, and `DatasetGenerator.py`, a Streamlit application for generating and managing datasets for computer vision tasks. Together, they form a pipeline for processing and analyzing images (e.g., flowcharts) and creating annotated datasets in COCO format for machine learning.
+This project, `VisionFlow`, is a Streamlit application designed to analyze workflow diagrams (e.g., flowcharts, ER diagrams) by processing images to extract text, detect shapes and connections, classify workflows, and generate structured outputs like SQL schemas or Python code. It leverages computer vision, optical character recognition (OCR), and AI-driven analysis to provide insights into workflow diagrams.
 
-## Overview of `app.py`
+## Overview
 
-The `app.py` Streamlit application processes images to extract text and analyze workflows, combining computer vision, optical character recognition (OCR), and AI-driven pseudocode generation. It allows users to upload an image, apply preprocessing techniques, extract text using OCR, and generate pseudocode for workflows using the Groq API.
+`FlowChart Analyzer 2.py` is a Streamlit application that processes images of workflow diagrams to:
+- Extract text using OCR.
+- Detect shapes and connections in the diagram.
+- Classify the diagram as either a database schema or procedural logic.
+- Generate SQL DDL statements for database schemas or Python code for procedural workflows.
+- Provide AI-enhanced analysis using the Groq API.
+- Visualize results with annotated images and structured outputs.
 
-### Functionality of `app.py`
-- **Image Upload**: Users can upload images (JPG, PNG, JPEG) via a web interface.
-- **Image Preprocessing**: Enhances images for better text extraction using techniques like grayscale conversion, thresholding, morphological opening, and edge detection.
-- **OCR**: Extracts text from the original and preprocessed images using Pytesseract.
-- **Workflow Analysis**: Analyzes the extracted text (from the thresholded image) using the Groq API to generate structured pseudocode for workflows.
-- **Visualization**: Displays the original image, preprocessed images in a 2x2 grid, extracted text, and generated pseudocode.
+The application supports JPG, PNG, and JPEG image uploads and provides a user-friendly interface to view preprocessing steps, detected components, extracted text, and generated code.
 
-## Components of `app.py`
+## Functionality
+
+- **Image Upload**: Users can upload workflow diagram images (JPG, PNG, JPEG) via a web interface.
+- **Image Preprocessing**: Enhances images for better OCR and shape detection using techniques like grayscale conversion, thresholding, morphological operations, and edge detection.
+- **OCR**: Extracts text from shapes within the diagram using Pytesseract.
+- **Shape and Connection Detection**: Identifies shapes (e.g., rectangles, circles, diamonds) and their connections (e.g., arrows, lines) to understand the diagram’s structure.
+- **Workflow Classification**: Classifies the diagram as a database schema (e.g., ER diagram) or procedural logic (e.g., flowchart) based on shape types and text content.
+- **Code Generation**:
+  - For database schemas: Generates SQL `CREATE TABLE` statements with columns and relationships.
+  - For procedural workflows: Generates Python code with proper control flow (e.g., conditionals, loops).
+- **AI-Enhanced Analysis**: Uses the Groq API to generate enhanced Python code based on extracted text and diagram structure.
+- **Visualization**: Displays the original image, annotated diagram with detected shapes and connections, extracted text, and generated code/SQL in a tabbed interface.
+
+## Components
 
 ### 1. Environment Setup
 - **Purpose**: Loads sensitive configuration details securely.
 - **Details**:
   - Uses `python-dotenv` to load variables from a `.env` file.
-  - Retrieves `TESSERACT_PATH` (path to Tesseract executable, if needed) and `GROQ_API_KEY` (for Groq API authentication).
+  - Retrieves `TESSERACT_PATH` (path to Tesseract executable, if non-standard) and `GROQ_API_KEY` (for Groq API authentication).
   - Sets the Tesseract command path if provided.
 - **Libraries**: `dotenv`, `os`.
 
 ### 2. `ImagePreprocessor` Class
-- **Purpose**: Handles image preprocessing to improve OCR accuracy.
+- **Purpose**: Preprocesses images to improve OCR and shape detection accuracy.
 - **Methods**:
   - `get_grayscale`: Converts the image to grayscale.
   - `remove_noise`: Applies median blur to reduce noise.
-  - `thresholding`: Uses Otsu's thresholding for binary image conversion.
+  - `thresholding`: Uses Otsu’s thresholding for binary image conversion.
+  - `adaptive_threshold`: Applies adaptive thresholding for shape detection.
   - `dilate` and `erode`: Morphological operations to enhance image features.
-  - `get_opening`: Combines erosion and dilation to remove small noise.
+  - `get_opening` and `get_closing`: Combines erosion and dilation to remove noise or fill gaps.
   - `canny`: Detects edges using the Canny algorithm.
-  - `deskew`: Corrects image skew for better text alignment.
-  - `match_template`: Template matching (not used in the main flow but available).
-  - `preprocess`: Runs key preprocessing steps (grayscale, thresholding, opening, canny) and returns results as a dictionary.
+  - `preprocess`: Runs the preprocessing pipeline and returns a dictionary of processed images (grayscale, thresholded, adaptive, opening, closing, canny, binary).
 - **Libraries**: `cv2` (OpenCV), `numpy`.
 
 ### 3. `OCRProcessor` Class
-- **Purpose**: Extracts text from images using Pytesseract.
+- **Purpose**: Extracts text from images and regions of interest (ROIs) using Pytesseract.
 - **Methods**:
   - `__init__`: Initializes with a custom Tesseract configuration (`--oem 3 --psm 6` for general text extraction).
   - `extract_text`: Extracts text from a single image.
-  - `process_images`: Extracts text from multiple images (original and preprocessed).
+  - `extract_text_from_roi`: Extracts text from a specific region (e.g., inside a shape).
+  - `process_images`: Extracts text from multiple preprocessed images.
 - **Libraries**: `pytesseract`.
 
-### 4. `analyze_workflow_with_groq` Function
-- **Purpose**: Analyzes extracted text to generate pseudocode for workflows using the Groq API.
-- **Details**:
-  - Authenticates with the Groq API using the `GROQ_API_KEY`.
-  - Sends the extracted text to the `llama-3.3-70b-versatile` model with a prompt to generate structured pseudocode.
-  - Handles errors (e.g., missing API key, network issues) gracefully.
+### 4. `ShapeDetector` Class
+- **Purpose**: Detects and classifies shapes in the workflow diagram.
+- **Methods**:
+  - `__init__`: Sets a minimum area threshold to filter out noise.
+  - `detect_shapes`: Finds contours, approximates polygons, classifies shapes (e.g., rectangle, circle, diamond), and extracts text from each shape using OCR.
+  - `classify_shape`: Classifies shapes based on the number of vertices (e.g., 4 for rectangle, >6 for circle).
+- **Libraries**: `cv2`, `pytesseract`.
+
+### 5. `ConnectionDetector` Class
+- **Purpose**: Detects connections (e.g., arrows, lines) between shapes.
+- **Methods**:
+  - `detect_connections`: Uses Hough Line Transform to identify lines, masks out shapes, and maps lines to start/end shapes.
+  - `find_closest_shape`: Finds the shape closest to a given point for connection mapping.
+- **Libraries**: `cv2`, `numpy`.
+
+### 6. `VisualizationUtils` Class
+- **Purpose**: Visualizes detected shapes and connections.
+- **Methods**:
+  - `visualize_detection`: Draws contours, bounding boxes, and connection lines with arrowheads on the original image.
+  - `matplotlib_to_pil`: Converts Matplotlib figures to PIL images for Streamlit display.
+- **Libraries**: `cv2`, `matplotlib.pyplot`, `PIL`, `io`.
+
+### 7. `WorkflowClassifier` Class
+- **Purpose**: Classifies the diagram as a database schema or procedural logic.
+- **Methods**:
+  - `classify_workflow`: Uses heuristics (shape type ratios, keyword analysis) to determine the workflow type with a confidence score.
+- **Libraries**: None (uses standard Python).
+
+### 8. `SQLGenerator` Class
+- **Purpose**: Generates SQL DDL statements for database schema diagrams.
+- **Methods**:
+  - `generate_sql_schema`: Identifies tables from rectangles, extracts columns and data types from text, and creates `CREATE TABLE` statements with primary and foreign key constraints.
+- **Libraries**: None (uses standard Python).
+
+### 9. `CodeGenerator` Class
+- **Purpose**: Generates Python code for procedural workflow diagrams.
+- **Methods**:
+  - `generate_python_code`: Builds a graph from shapes and connections, sorts shapes by y-coordinate, and generates Python code with proper control flow (e.g., `if` statements for decisions, `print` for outputs).
+- **Libraries**: `re`.
+
+### 10. `AIAnalyzer` Class
+- **Purpose**: Enhances workflow analysis using the Groq API.
+- **Methods**:
+  - `analyze_workflow_with_groq`: Sends extracted text, shapes, and connections to the Groq API (`llama-3.3-70b-versatile` model) to generate structured Python code with error handling.
 - **Libraries**: `requests`.
 
-### 5. `matplotlib_to_pil` Function
-- **Purpose**: Converts Matplotlib figures to PIL images for Streamlit display.
-- **Details**: Saves the figure to a buffer and converts it to a PIL Image.
-- **Libraries**: `matplotlib.pyplot`, `PIL`, `io`.
-
-### 6. `main` Function
-- **Purpose**: Orchestrates the Streamlit app's workflow.
+### 11. `main` Function
+- **Purpose**: Orchestrates the Streamlit app’s workflow.
 - **Details**:
-  - Creates a Streamlit interface with a title and file uploader for images.
+  - Creates a Streamlit interface with a title and file uploader.
   - Displays the original image in RGB format.
-  - Initializes `ImagePreprocessor` and `OCRProcessor`.
-  - Preprocesses the uploaded image and displays results (grayscale, thresholded, opening, canny) in a 2x2 grid.
-  - Extracts text from the original and preprocessed images, displaying each in a text area.
-  - Analyzes the thresholded image's text using the Groq API and displays the generated pseudocode.
-  - Uses spinners to indicate processing and warnings for empty text.
+  - Initializes all processing classes (`ImagePreprocessor`, `OCRProcessor`, etc.).
+  - Processes the uploaded image: preprocesses, detects shapes/connections, classifies the workflow, and generates SQL or Python code.
+  - Displays results in tabs: detection results (annotated image, shapes), generated code/SQL, AI-enhanced code, and extracted text.
+  - Provides download buttons for generated code/SQL and AI-enhanced code.
 - **Libraries**: `streamlit`, `cv2`, `numpy`, `PIL`, `matplotlib.pyplot`, `uuid`.
 
-## Overview of `DatasetGenerator.py`
-
-The `DatasetGenerator.py` Streamlit application is designed to create and manage datasets for computer vision tasks, specifically for generating annotated flowchart images and converting them into COCO format for machine learning model training (e.g., object detection or image segmentation).
-
-### Functionality of `DatasetGenerator.py`
-- **Dataset Generation**: Creates a specified number of flowchart images with corresponding JSON annotations using a custom `GenerateDataset` class.
-- **Annotation Export**: Converts annotations to a CSV file for easy inspection.
-- **COCO Format Conversion**: Transforms JSON annotations into COCO format using a `J2C` (JSON2COCO) class.
-- **Train-Validation Split**: Splits the dataset into training and validation sets in COCO format.
-- **Visualization**: Displays generated images, JSON annotations, CSV annotations, COCO format data, and train/validation splits in a tabbed interface.
-- **Dataset Management**: Allows users to clear the dataset directory to start fresh.
-
-## Components of `DatasetGenerator.py`
-
-### 1. `EmptyDirectory` Function
-- **Purpose**: Clears all files in the `dataset/` directory and the `annotations.csv` file.
-- **Details**: Uses `glob` to find files and `os.remove` to delete them, with a Streamlit spinner for feedback.
-- **Libraries**: `glob`, `os`, `streamlit`.
-
-### 2. Sidebar Controls
-- **Purpose**: Provides user inputs for dataset generation and management.
-- **Details**:
-  - `DatasetNum`: A number input to specify how many flowchart images to generate.
-  - `DatasetIndex`: A number input to select a specific dataset image/annotation for display.
-  - `Start Pipeline` Button: Triggers the dataset generation pipeline.
-  - `Empty Datasets` Button: Calls `EmptyDirectory` to clear the dataset.
-- **Libraries**: `streamlit`.
-
-### 3. Pipeline Execution
-- **Purpose**: Runs the dataset generation and processing pipeline.
-- **Details**:
-  - **Dataset Creation**: Uses `GenerateDataset.CreateDataset` to generate `DatasetNum` flowchart images and JSON annotations.
-  - **CSV Conversion**: Uses `GenerateDataset.ScriptToCSV` to export annotations to `annotations.csv`.
-  - **COCO Conversion**: Uses `J2C.convert_to_coco` to create `instances_coco.json` in COCO format.
-  - **Train-Validation Split**: Uses `J2C.TrainValSplit` to create `instances_train.json` and `instances_val.json`.
-- **Dependencies**: Custom `GenerateDataset` and `J2C` classes (assumed in `Assets/` directory).
-- **Libraries**: `streamlit`.
-
-### 4. Tabbed Interface
-- **Purpose**: Displays dataset details in an organized manner.
-- **Tabs**:
-  - **Dataset**:
-    - Shows the selected flowchart image (`flowchart_XXX.jpg`) and its JSON annotation (`flowchart_XXX.json`).
-    - Handles errors if files are missing.
-  - **Annotations**:
-    - Displays `annotations.csv` as a DataFrame if it exists.
-  - **COCO Format Dataset**:
-    - Shows `instances_coco.json` data split into images, annotations, and categories as DataFrames.
-  - **Train Validation Split**:
-    - Sub-tabs for `instances_train.json` and `instances_val.json`, each showing images, annotations, and categories as DataFrames.
-- **Libraries**: `streamlit`, `pandas`, `json`.
-
 ## Dependencies
-### For `app.py`
-- Python 3.8+
-- Libraries: `streamlit`, `opencv-python`, `numpy`, `pytesseract`, `Pillow`, `matplotlib`, `python-dotenv`, `requests`.
-- External: Tesseract-OCR installed (with path in `.env` if non-standard), Groq API key.
-
-### For `DatasetGenerator.py`
-- Python 3.8+
-- Libraries: `streamlit`, `pandas`, `json`, `os`, `glob`, `subprocess`.
-- Custom Modules: `Assets.DatasetGenerator.GenerateDataset`, `Assets.JSON2COCO.J2C`.
-- Directory: Expects a `dataset/` folder for output.
+- **Python**: 3.8+
+- **Libraries**:
+  - `streamlit`: For the web interface.
+  - `opencv-python`: For image processing.
+  - `numpy`: For numerical operations.
+  - `pytesseract`: For OCR.
+  - `Pillow`: For image handling.
+  - `matplotlib`: For visualization.
+  - `python-dotenv`: For environment variable management.
+  - `requests`: For Groq API calls.
+  - `scikit-image`: For image measurement utilities.
+- **External**:
+  - Tesseract-OCR installed (with path in `.env` if non-standard).
+  - Groq API key (required for AI analysis).
 
 ## Usage
-### For `app.py`
-1. Create a `.env` file with:
+1. **Set up the environment**:
+   Create a `.env` file in the project root with:
    ```env
-   TESSERACT_PATH=C:\Program Files\Tesseract-OCR\tesseract.exe  # Optional
+   TESSERACT_PATH=C:\Program Files\Tesseract-OCR\tesseract.exe  # Optional, if non-standard
    GROQ_API_KEY=your-groq-api-key
    ```
-2. Install dependencies:
-   ```bash
-   pip install streamlit opencv-python numpy pytesseract Pillow matplotlib python-dotenv requests
-   ```
-3. Run the app:
-   ```bash
-   streamlit run app.py
-   ```
-4. Upload an image to preprocess, extract text, and view pseudocode.
+   Ensure `.env` is not committed to version control (add to `.gitignore`).
 
-### For `DatasetGenerator.py`
-1. Ensure the `Assets/` directory contains `DatasetGenerator.py` and `JSON2COCO.py`.
-2. Install dependencies:
+2. **Install dependencies**:
    ```bash
-   pip install streamlit pandas
+   pip install streamlit opencv-python numpy pytesseract Pillow matplotlib python-dotenv requests scikit-image
    ```
-3. Run the app:
+
+3. **Run the app**:
    ```bash
-   streamlit run DatasetGenerator.py
+   streamlit run FlowChart Analyzer 2.py
    ```
-4. Use the sidebar to specify the number of datasets, start the pipeline, and view results in the tabs.
+
+4. **Use the app**:
+   - Open the Streamlit interface in your browser (typically `http://localhost:8501`).
+   - Upload a workflow diagram image (JPG, PNG, JPEG).
+   - View the processed results in the tabs:
+     - **Detection Results**: Annotated image with shapes and connections, workflow type, and shape details.
+     - **SQL Schema/Python Code**: Generated SQL or Python code with a download button.
+     - **AI Enhanced Analysis**: AI-generated Python code with a download button.
+     - **Extracted Text**: Raw text extracted from the diagram.
+   - Download generated outputs as needed.
 
 ## Notes
-- **Integration**: `app.py` can process images generated by `DatasetGenerator.py` (e.g., `flowchart_XXX.jpg`) for OCR and workflow analysis, creating a cohesive pipeline.
-- **Security**: Ensure `.env` is not committed to version control (add to `.gitignore`).
-- **Error Handling**: Both apps handle missing files or API errors with warnings in the Streamlit interface.
-- **Custom Modules**: `DatasetGenerator.py` relies on `GenerateDataset` and `J2C`, which must be implemented correctly in `Assets/`.
+- **Error Handling**: The app handles missing files, API errors, or empty text with Streamlit warnings and error messages.
+- **Performance**: Large or complex diagrams may require more processing time; spinners indicate progress.
+- **Customization**: The preprocessing pipeline, shape classification, and code generation can be extended by modifying the respective classes.
+- **Security**: Ensure the Groq API key is kept secure and not exposed in the codebase.
+- **Limitations**:
+  - OCR accuracy depends on image quality and text clarity.
+  - Shape detection may miss small or overlapping shapes (adjust `min_area` in `ShapeDetector` if needed).
+  - AI analysis requires a valid Groq API key and internet connection.
