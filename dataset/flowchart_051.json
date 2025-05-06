@@ -1,0 +1,129 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Graham's Convex Hull",
+      "x": 160,
+      "y": 50,
+      "w": 303,
+      "h": 49,
+      "center_x": 311,
+      "center_y": 74,
+      "bottom_y": 99,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Find bottom-most point as pivot",
+      "x": 320,
+      "y": 149,
+      "w": 383,
+      "h": 51,
+      "center_x": 511,
+      "center_y": 174,
+      "bottom_y": 200,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "rectangle",
+      "text": "Sort points by polar angle",
+      "x": 480,
+      "y": 250,
+      "w": 277,
+      "h": 51,
+      "center_x": 618,
+      "center_y": 275,
+      "bottom_y": 301,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "diamond",
+      "text": "More points?",
+      "x": 640,
+      "y": 351,
+      "w": 234,
+      "h": 67,
+      "center_x": 757,
+      "center_y": 384,
+      "bottom_y": 418,
+      "step_type": "decision",
+      "true_branch": 4,
+      "false_branch": 6
+    },
+    {
+      "id": 4,
+      "shape": "rectangle",
+      "text": "Add point to hull, handle collinear points",
+      "x": 160,
+      "y": 468,
+      "w": 454,
+      "h": 51,
+      "center_x": 387,
+      "center_y": 493,
+      "bottom_y": 519,
+      "step_type": "process"
+    },
+    {
+      "id": 5,
+      "shape": "rectangle",
+      "text": "Return hull",
+      "x": 320,
+      "y": 569,
+      "w": 126,
+      "h": 53,
+      "center_x": 383,
+      "center_y": 595,
+      "bottom_y": 622,
+      "step_type": "process"
+    },
+    {
+      "id": 6,
+      "shape": "oval",
+      "text": "End Graham's Convex Hull",
+      "x": 480,
+      "y": 672,
+      "w": 291,
+      "h": 37,
+      "center_x": 625,
+      "center_y": 690,
+      "bottom_y": 709,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": null
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": "True"
+    },
+    {
+      "from_id": 3,
+      "to_id": 6,
+      "label": "False"
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": null
+    }
+  ]
+}

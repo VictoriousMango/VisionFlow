@@ -3,12 +3,12 @@
     {
       "id": 0,
       "shape": "oval",
-      "text": "Start Kosaraju's SCC",
+      "text": "Start Jarvis March",
       "x": 160,
       "y": 50,
-      "w": 258,
+      "w": 218,
       "h": 40,
-      "center_x": 289,
+      "center_x": 269,
       "center_y": 70,
       "bottom_y": 90,
       "step_type": "start"
@@ -16,40 +16,68 @@
     {
       "id": 1,
       "shape": "rectangle",
-      "text": "First DFS for finishing times",
+      "text": "Find leftmost point",
       "x": 320,
       "y": 140,
-      "w": 301,
-      "h": 46,
-      "center_x": 470,
-      "center_y": 163,
-      "bottom_y": 186,
+      "w": 221,
+      "h": 51,
+      "center_x": 430,
+      "center_y": 165,
+      "bottom_y": 191,
       "step_type": "process"
     },
     {
       "id": 2,
-      "shape": "rectangle",
-      "text": "Transpose graph, second DFS for SCCs",
+      "shape": "diamond",
+      "text": "Hull not complete?",
       "x": 480,
-      "y": 236,
-      "w": 431,
-      "h": 43,
-      "center_x": 695,
-      "center_y": 257,
-      "bottom_y": 279,
-      "step_type": "process"
+      "y": 241,
+      "w": 331,
+      "h": 57,
+      "center_x": 645,
+      "center_y": 269,
+      "bottom_y": 298,
+      "step_type": "decision",
+      "true_branch": 3,
+      "false_branch": 5
     },
     {
       "id": 3,
-      "shape": "oval",
-      "text": "End Kosaraju's SCC",
+      "shape": "rectangle",
+      "text": "Find next hull point using orientation",
       "x": 640,
-      "y": 329,
-      "w": 227,
-      "h": 44,
-      "center_x": 753,
-      "center_y": 351,
-      "bottom_y": 373,
+      "y": 348,
+      "w": 399,
+      "h": 34,
+      "center_x": 839,
+      "center_y": 365,
+      "bottom_y": 382,
+      "step_type": "process"
+    },
+    {
+      "id": 4,
+      "shape": "rectangle",
+      "text": "Return hull",
+      "x": 160,
+      "y": 432,
+      "w": 168,
+      "h": 38,
+      "center_x": 244,
+      "center_y": 451,
+      "bottom_y": 470,
+      "step_type": "process"
+    },
+    {
+      "id": 5,
+      "shape": "oval",
+      "text": "End Jarvis March",
+      "x": 320,
+      "y": 520,
+      "w": 213,
+      "h": 53,
+      "center_x": 426,
+      "center_y": 546,
+      "bottom_y": 573,
       "step_type": "end"
     }
   ],
@@ -67,6 +95,16 @@
     {
       "from_id": 2,
       "to_id": 3,
+      "label": "True"
+    },
+    {
+      "from_id": 2,
+      "to_id": 5,
+      "label": "False"
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
       "label": null
     }
   ]

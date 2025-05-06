@@ -1,580 +1,1600 @@
 {
   "images": [
     {
-      "id": 27,
-      "file_name": "flowchart_027.jpg",
+      "id": 60,
+      "file_name": "flowchart_060.jpg",
       "width": 800,
       "height": 1000
     },
     {
-      "id": 28,
-      "file_name": "flowchart_028.jpg",
+      "id": 61,
+      "file_name": "flowchart_061.jpg",
       "width": 800,
       "height": 1000
     },
     {
-      "id": 29,
-      "file_name": "flowchart_029.jpg",
+      "id": 62,
+      "file_name": "flowchart_062.jpg",
       "width": 800,
       "height": 1000
     },
     {
-      "id": 30,
-      "file_name": "flowchart_030.jpg",
+      "id": 63,
+      "file_name": "flowchart_063.jpg",
       "width": 800,
       "height": 1000
     },
     {
-      "id": 31,
-      "file_name": "flowchart_031.jpg",
+      "id": 64,
+      "file_name": "flowchart_064.jpg",
       "width": 800,
       "height": 1000
     },
     {
-      "id": 32,
-      "file_name": "flowchart_032.jpg",
+      "id": 65,
+      "file_name": "flowchart_065.jpg",
       "width": 800,
       "height": 1000
     },
     {
-      "id": 33,
-      "file_name": "flowchart_033.jpg",
+      "id": 66,
+      "file_name": "flowchart_066.jpg",
+      "width": 800,
+      "height": 1000
+    },
+    {
+      "id": 67,
+      "file_name": "flowchart_067.jpg",
+      "width": 800,
+      "height": 1000
+    },
+    {
+      "id": 68,
+      "file_name": "flowchart_068.jpg",
+      "width": 800,
+      "height": 1000
+    },
+    {
+      "id": 69,
+      "file_name": "flowchart_069.jpg",
+      "width": 800,
+      "height": 1000
+    },
+    {
+      "id": 70,
+      "file_name": "flowchart_070.jpg",
+      "width": 800,
+      "height": 1000
+    },
+    {
+      "id": 71,
+      "file_name": "flowchart_071.jpg",
+      "width": 800,
+      "height": 1000
+    },
+    {
+      "id": 72,
+      "file_name": "flowchart_072.jpg",
+      "width": 800,
+      "height": 1000
+    },
+    {
+      "id": 73,
+      "file_name": "flowchart_073.jpg",
+      "width": 800,
+      "height": 1000
+    },
+    {
+      "id": 74,
+      "file_name": "flowchart_074.jpg",
+      "width": 800,
+      "height": 1000
+    },
+    {
+      "id": 75,
+      "file_name": "flowchart_075.jpg",
       "width": 800,
       "height": 1000
     }
   ],
   "annotations": [
     {
-      "id": 166,
-      "image_id": 27,
+      "id": 385,
+      "image_id": 60,
       "category_id": 1,
       "bbox": [
         160,
         50,
-        248,
-        46
+        132,
+        54
       ],
-      "area": 11408,
+      "area": 7128,
       "iscrowd": 0,
-      "text": "Start Hamiltonian Cycle"
+      "text": "Start LIS"
     },
     {
-      "id": 167,
-      "image_id": 27,
+      "id": 386,
+      "image_id": 60,
       "category_id": 3,
       "bbox": [
         320,
-        146,
-        275,
-        41
-      ],
-      "area": 11275,
-      "iscrowd": 0,
-      "text": "Backtrack to find cycle"
-    },
-    {
-      "id": 168,
-      "image_id": 27,
-      "category_id": 3,
-      "bbox": [
-        480,
-        237,
-        261,
-        46
-      ],
-      "area": 12006,
-      "iscrowd": 0,
-      "text": "Check all vertices visited"
-    },
-    {
-      "id": 169,
-      "image_id": 27,
-      "category_id": 1,
-      "bbox": [
-        640,
-        333,
-        259,
-        41
-      ],
-      "area": 10619,
-      "iscrowd": 0,
-      "text": "End Hamiltonian Cycle"
-    },
-    {
-      "id": 170,
-      "image_id": 28,
-      "category_id": 1,
-      "bbox": [
-        160,
-        50,
-        228,
+        154,
+        232,
         34
       ],
-      "area": 7752,
-      "iscrowd": 0,
-      "text": "Start Floyd-Warshall"
-    },
-    {
-      "id": 171,
-      "image_id": 28,
-      "category_id": 3,
-      "bbox": [
-        320,
-        134,
-        554,
-        37
-      ],
-      "area": 20498,
-      "iscrowd": 0,
-      "text": "Initialize distance matrix with infinity, diagonals to 0"
-    },
-    {
-      "id": 172,
-      "image_id": 28,
-      "category_id": 3,
-      "bbox": [
-        480,
-        221,
-        103,
-        52
-      ],
-      "area": 5356,
-      "iscrowd": 0,
-      "text": "k = 0"
-    },
-    {
-      "id": 173,
-      "image_id": 28,
-      "category_id": 2,
-      "bbox": [
-        640,
-        323,
-        139,
-        81
-      ],
-      "area": 11259,
-      "iscrowd": 0,
-      "text": "k < V?"
-    },
-    {
-      "id": 174,
-      "image_id": 28,
-      "category_id": 3,
-      "bbox": [
-        160,
-        454,
-        121,
-        49
-      ],
-      "area": 5929,
-      "iscrowd": 0,
-      "text": "i = 0"
-    },
-    {
-      "id": 175,
-      "image_id": 28,
-      "category_id": 2,
-      "bbox": [
-        320,
-        553,
-        165,
-        58
-      ],
-      "area": 9570,
-      "iscrowd": 0,
-      "text": "i < V?"
-    },
-    {
-      "id": 176,
-      "image_id": 28,
-      "category_id": 3,
-      "bbox": [
-        480,
-        661,
-        556,
-        48
-      ],
-      "area": 26688,
-      "iscrowd": 0,
-      "text": "Update dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])"
-    },
-    {
-      "id": 177,
-      "image_id": 28,
-      "category_id": 3,
-      "bbox": [
-        640,
-        759,
-        122,
-        52
-      ],
-      "area": 6344,
-      "iscrowd": 0,
-      "text": "i = i + 1"
-    },
-    {
-      "id": 178,
-      "image_id": 28,
-      "category_id": 3,
-      "bbox": [
-        160,
-        861,
-        141,
-        34
-      ],
-      "area": 4794,
-      "iscrowd": 0,
-      "text": "k = k + 1"
-    },
-    {
-      "id": 179,
-      "image_id": 28,
-      "category_id": 1,
-      "bbox": [
-        320,
-        945,
-        208,
-        38
-      ],
-      "area": 7904,
-      "iscrowd": 0,
-      "text": "End Floyd-Warshall"
-    },
-    {
-      "id": 180,
-      "image_id": 29,
-      "category_id": 1,
-      "bbox": [
-        160,
-        50,
-        203,
-        43
-      ],
-      "area": 8729,
-      "iscrowd": 0,
-      "text": "Start Rod Cutting"
-    },
-    {
-      "id": 181,
-      "image_id": 29,
-      "category_id": 3,
-      "bbox": [
-        320,
-        143,
-        235,
-        50
-      ],
-      "area": 11750,
+      "area": 7888,
       "iscrowd": 0,
       "text": "Initialize dp array"
     },
     {
-      "id": 182,
-      "image_id": 29,
+      "id": 387,
+      "image_id": 60,
       "category_id": 3,
       "bbox": [
         480,
-        243,
-        282,
-        35
+        238,
+        244,
+        42
       ],
-      "area": 9870,
+      "area": 10248,
       "iscrowd": 0,
-      "text": "Fill dp with max profit"
+      "text": "Fill dp with lengths"
     },
     {
-      "id": 183,
-      "image_id": 29,
+      "id": 388,
+      "image_id": 60,
       "category_id": 1,
       "bbox": [
         640,
-        328,
-        207,
-        48
+        330,
+        109,
+        44
       ],
-      "area": 9936,
+      "area": 4796,
       "iscrowd": 0,
-      "text": "End Rod Cutting"
+      "text": "End LIS"
     },
     {
-      "id": 184,
-      "image_id": 30,
+      "id": 389,
+      "image_id": 61,
+      "category_id": 1,
+      "bbox": [
+        160,
+        50,
+        241,
+        48
+      ],
+      "area": 11568,
+      "iscrowd": 0,
+      "text": "Start Karger's Min Cut"
+    },
+    {
+      "id": 390,
+      "image_id": 61,
+      "category_id": 3,
+      "bbox": [
+        320,
+        148,
+        459,
+        48
+      ],
+      "area": 22032,
+      "iscrowd": 0,
+      "text": "Contract random edges until 2 nodes remain"
+    },
+    {
+      "id": 391,
+      "image_id": 61,
+      "category_id": 3,
+      "bbox": [
+        480,
+        246,
+        179,
+        34
+      ],
+      "area": 6086,
+      "iscrowd": 0,
+      "text": "Count cut edges"
+    },
+    {
+      "id": 392,
+      "image_id": 61,
+      "category_id": 1,
+      "bbox": [
+        640,
+        330,
+        258,
+        48
+      ],
+      "area": 12384,
+      "iscrowd": 0,
+      "text": "End Karger's Min Cut"
+    },
+    {
+      "id": 393,
+      "image_id": 62,
+      "category_id": 1,
+      "bbox": [
+        160,
+        50,
+        239,
+        54
+      ],
+      "area": 12906,
+      "iscrowd": 0,
+      "text": "Start Selection Sort"
+    },
+    {
+      "id": 394,
+      "image_id": 62,
+      "category_id": 3,
+      "bbox": [
+        320,
+        154,
+        98,
+        45
+      ],
+      "area": 4410,
+      "iscrowd": 0,
+      "text": "i = 0"
+    },
+    {
+      "id": 395,
+      "image_id": 62,
+      "category_id": 2,
+      "bbox": [
+        480,
+        249,
+        175,
+        63
+      ],
+      "area": 11025,
+      "iscrowd": 0,
+      "text": "i < n-1?"
+    },
+    {
+      "id": 396,
+      "image_id": 62,
+      "category_id": 3,
+      "bbox": [
+        640,
+        362,
+        145,
+        39
+      ],
+      "area": 5655,
+      "iscrowd": 0,
+      "text": "min_idx = i"
+    },
+    {
+      "id": 397,
+      "image_id": 62,
+      "category_id": 3,
+      "bbox": [
+        160,
+        451,
+        138,
+        41
+      ],
+      "area": 5658,
+      "iscrowd": 0,
+      "text": "j = i + 1"
+    },
+    {
+      "id": 398,
+      "image_id": 62,
+      "category_id": 2,
+      "bbox": [
+        320,
+        542,
+        156,
+        81
+      ],
+      "area": 12636,
+      "iscrowd": 0,
+      "text": "j < n?"
+    },
+    {
+      "id": 399,
+      "image_id": 62,
+      "category_id": 2,
+      "bbox": [
+        480,
+        673,
+        412,
+        54
+      ],
+      "area": 22248,
+      "iscrowd": 0,
+      "text": "array[j] < array[min_idx]?"
+    },
+    {
+      "id": 400,
+      "image_id": 62,
+      "category_id": 3,
+      "bbox": [
+        640,
+        777,
+        182,
+        51
+      ],
+      "area": 9282,
+      "iscrowd": 0,
+      "text": "min_idx = j"
+    },
+    {
+      "id": 401,
+      "image_id": 62,
+      "category_id": 3,
+      "bbox": [
+        160,
+        878,
+        373,
+        36
+      ],
+      "area": 13428,
+      "iscrowd": 0,
+      "text": "Swap array[i] and array[min_idx]"
+    },
+    {
+      "id": 402,
+      "image_id": 62,
+      "category_id": 1,
+      "bbox": [
+        320,
+        964,
+        220,
+        36
+      ],
+      "area": 7920,
+      "iscrowd": 0,
+      "text": "End Selection Sort"
+    },
+    {
+      "id": 403,
+      "image_id": 63,
+      "category_id": 1,
+      "bbox": [
+        160,
+        50,
+        219,
+        49
+      ],
+      "area": 10731,
+      "iscrowd": 0,
+      "text": "Start 0/1 Knapsack"
+    },
+    {
+      "id": 404,
+      "image_id": 63,
+      "category_id": 3,
+      "bbox": [
+        320,
+        149,
+        322,
+        37
+      ],
+      "area": 11914,
+      "iscrowd": 0,
+      "text": "Initialize dp[n+1][W+1] to 0"
+    },
+    {
+      "id": 405,
+      "image_id": 63,
+      "category_id": 3,
+      "bbox": [
+        480,
+        236,
+        117,
+        49
+      ],
+      "area": 5733,
+      "iscrowd": 0,
+      "text": "i = 1"
+    },
+    {
+      "id": 406,
+      "image_id": 63,
+      "category_id": 2,
+      "bbox": [
+        640,
+        335,
+        177,
+        55
+      ],
+      "area": 9735,
+      "iscrowd": 0,
+      "text": "i <= n?"
+    },
+    {
+      "id": 407,
+      "image_id": 63,
+      "category_id": 3,
+      "bbox": [
+        160,
+        440,
+        118,
+        40
+      ],
+      "area": 4720,
+      "iscrowd": 0,
+      "text": "j = 0"
+    },
+    {
+      "id": 408,
+      "image_id": 63,
+      "category_id": 2,
+      "bbox": [
+        320,
+        530,
+        184,
+        61
+      ],
+      "area": 11224,
+      "iscrowd": 0,
+      "text": "j <= W?"
+    },
+    {
+      "id": 409,
+      "image_id": 63,
+      "category_id": 2,
+      "bbox": [
+        480,
+        641,
+        245,
+        78
+      ],
+      "area": 19110,
+      "iscrowd": 0,
+      "text": "wt[i-1] <= j?"
+    },
+    {
+      "id": 410,
+      "image_id": 63,
+      "category_id": 3,
+      "bbox": [
+        640,
+        769,
+        582,
+        44
+      ],
+      "area": 25608,
+      "iscrowd": 0,
+      "text": "dp[i][j] = max(val[i-1] + dp[i-1][j-wt[i-1]], dp[i-1][j])"
+    },
+    {
+      "id": 411,
+      "image_id": 63,
+      "category_id": 3,
+      "bbox": [
+        160,
+        863,
+        238,
+        34
+      ],
+      "area": 8092,
+      "iscrowd": 0,
+      "text": "dp[i][j] = dp[i-1][j]"
+    },
+    {
+      "id": 412,
+      "image_id": 63,
+      "category_id": 3,
+      "bbox": [
+        320,
+        947,
+        149,
+        47
+      ],
+      "area": 7003,
+      "iscrowd": 0,
+      "text": "j = j + 1"
+    },
+    {
+      "id": 413,
+      "image_id": 63,
+      "category_id": 3,
+      "bbox": [
+        480,
+        1044,
+        121,
+        44
+      ],
+      "area": 5324,
+      "iscrowd": 0,
+      "text": "i = i + 1"
+    },
+    {
+      "id": 414,
+      "image_id": 63,
+      "category_id": 1,
+      "bbox": [
+        640,
+        1138,
+        211,
+        34
+      ],
+      "area": 7174,
+      "iscrowd": 0,
+      "text": "End 0/1 Knapsack"
+    },
+    {
+      "id": 415,
+      "image_id": 64,
+      "category_id": 1,
+      "bbox": [
+        160,
+        50,
+        204,
+        34
+      ],
+      "area": 6936,
+      "iscrowd": 0,
+      "text": "Start Coin Change"
+    },
+    {
+      "id": 416,
+      "image_id": 64,
+      "category_id": 3,
+      "bbox": [
+        320,
+        134,
+        224,
+        51
+      ],
+      "area": 11424,
+      "iscrowd": 0,
+      "text": "Initialize dp array"
+    },
+    {
+      "id": 417,
+      "image_id": 64,
+      "category_id": 3,
+      "bbox": [
+        480,
+        235,
+        312,
+        51
+      ],
+      "area": 15912,
+      "iscrowd": 0,
+      "text": "Fill dp with minimum coins"
+    },
+    {
+      "id": 418,
+      "image_id": 64,
+      "category_id": 1,
+      "bbox": [
+        640,
+        336,
+        185,
+        34
+      ],
+      "area": 6290,
+      "iscrowd": 0,
+      "text": "End Coin Change"
+    },
+    {
+      "id": 419,
+      "image_id": 65,
+      "category_id": 1,
+      "bbox": [
+        160,
+        50,
+        175,
+        52
+      ],
+      "area": 9100,
+      "iscrowd": 0,
+      "text": "Start TSP DP"
+    },
+    {
+      "id": 420,
+      "image_id": 65,
+      "category_id": 3,
+      "bbox": [
+        320,
+        152,
+        292,
+        42
+      ],
+      "area": 12264,
+      "iscrowd": 0,
+      "text": "Initialize dp with infinity"
+    },
+    {
+      "id": 421,
+      "image_id": 65,
+      "category_id": 3,
+      "bbox": [
+        480,
+        244,
+        426,
+        46
+      ],
+      "area": 19596,
+      "iscrowd": 0,
+      "text": "Use dynamic programming with bitmask"
+    },
+    {
+      "id": 422,
+      "image_id": 65,
+      "category_id": 1,
+      "bbox": [
+        640,
+        340,
+        148,
+        44
+      ],
+      "area": 6512,
+      "iscrowd": 0,
+      "text": "End TSP DP"
+    },
+    {
+      "id": 423,
+      "image_id": 66,
+      "category_id": 1,
+      "bbox": [
+        160,
+        50,
+        234,
+        38
+      ],
+      "area": 8892,
+      "iscrowd": 0,
+      "text": "Start 0/1 Knapsack"
+    },
+    {
+      "id": 424,
+      "image_id": 66,
+      "category_id": 3,
+      "bbox": [
+        320,
+        138,
+        299,
+        39
+      ],
+      "area": 11661,
+      "iscrowd": 0,
+      "text": "Initialize dp[n+1][W+1] to 0"
+    },
+    {
+      "id": 425,
+      "image_id": 66,
+      "category_id": 3,
+      "bbox": [
+        480,
+        227,
+        96,
+        34
+      ],
+      "area": 3264,
+      "iscrowd": 0,
+      "text": "i = 1"
+    },
+    {
+      "id": 426,
+      "image_id": 66,
+      "category_id": 2,
+      "bbox": [
+        640,
+        311,
+        148,
+        77
+      ],
+      "area": 11396,
+      "iscrowd": 0,
+      "text": "i <= n?"
+    },
+    {
+      "id": 427,
+      "image_id": 66,
+      "category_id": 3,
+      "bbox": [
+        160,
+        438,
+        106,
+        42
+      ],
+      "area": 4452,
+      "iscrowd": 0,
+      "text": "j = 0"
+    },
+    {
+      "id": 428,
+      "image_id": 66,
+      "category_id": 2,
+      "bbox": [
+        320,
+        530,
+        186,
+        74
+      ],
+      "area": 13764,
+      "iscrowd": 0,
+      "text": "j <= W?"
+    },
+    {
+      "id": 429,
+      "image_id": 66,
+      "category_id": 2,
+      "bbox": [
+        480,
+        654,
+        260,
+        78
+      ],
+      "area": 20280,
+      "iscrowd": 0,
+      "text": "wt[i-1] <= j?"
+    },
+    {
+      "id": 430,
+      "image_id": 66,
+      "category_id": 3,
+      "bbox": [
+        640,
+        782,
+        612,
+        39
+      ],
+      "area": 23868,
+      "iscrowd": 0,
+      "text": "dp[i][j] = max(val[i-1] + dp[i-1][j-wt[i-1]], dp[i-1][j])"
+    },
+    {
+      "id": 431,
+      "image_id": 66,
+      "category_id": 3,
+      "bbox": [
+        160,
+        871,
+        218,
+        54
+      ],
+      "area": 11772,
+      "iscrowd": 0,
+      "text": "dp[i][j] = dp[i-1][j]"
+    },
+    {
+      "id": 432,
+      "image_id": 66,
+      "category_id": 3,
+      "bbox": [
+        320,
+        975,
+        155,
+        42
+      ],
+      "area": 6510,
+      "iscrowd": 0,
+      "text": "j = j + 1"
+    },
+    {
+      "id": 433,
+      "image_id": 66,
+      "category_id": 3,
+      "bbox": [
+        480,
+        1067,
+        117,
+        47
+      ],
+      "area": 5499,
+      "iscrowd": 0,
+      "text": "i = i + 1"
+    },
+    {
+      "id": 434,
+      "image_id": 66,
+      "category_id": 1,
+      "bbox": [
+        640,
+        1164,
+        239,
+        39
+      ],
+      "area": 9321,
+      "iscrowd": 0,
+      "text": "End 0/1 Knapsack"
+    },
+    {
+      "id": 435,
+      "image_id": 67,
+      "category_id": 1,
+      "bbox": [
+        160,
+        50,
+        209,
+        34
+      ],
+      "area": 7106,
+      "iscrowd": 0,
+      "text": "Start Boyer-Moore"
+    },
+    {
+      "id": 436,
+      "image_id": 67,
+      "category_id": 3,
+      "bbox": [
+        320,
+        134,
+        523,
+        39
+      ],
+      "area": 20397,
+      "iscrowd": 0,
+      "text": "Precompute bad character and good suffix rules"
+    },
+    {
+      "id": 437,
+      "image_id": 67,
+      "category_id": 3,
+      "bbox": [
+        480,
+        223,
+        108,
+        42
+      ],
+      "area": 4536,
+      "iscrowd": 0,
+      "text": "i = 0"
+    },
+    {
+      "id": 438,
+      "image_id": 67,
+      "category_id": 2,
+      "bbox": [
+        640,
+        315,
+        230,
+        74
+      ],
+      "area": 17020,
+      "iscrowd": 0,
+      "text": "i <= n-m?"
+    },
+    {
+      "id": 439,
+      "image_id": 67,
+      "category_id": 3,
+      "bbox": [
+        160,
+        439,
+        327,
+        51
+      ],
+      "area": 16677,
+      "iscrowd": 0,
+      "text": "Align pattern, check mismatch"
+    },
+    {
+      "id": 440,
+      "image_id": 67,
+      "category_id": 3,
+      "bbox": [
+        320,
+        540,
+        279,
+        44
+      ],
+      "area": 12276,
+      "iscrowd": 0,
+      "text": "Shift pattern using rules"
+    },
+    {
+      "id": 441,
+      "image_id": 67,
+      "category_id": 1,
+      "bbox": [
+        480,
+        634,
+        189,
+        50
+      ],
+      "area": 9450,
+      "iscrowd": 0,
+      "text": "End Boyer-Moore"
+    },
+    {
+      "id": 442,
+      "image_id": 68,
+      "category_id": 1,
+      "bbox": [
+        160,
+        50,
+        214,
+        39
+      ],
+      "area": 8346,
+      "iscrowd": 0,
+      "text": "Start Coin Change"
+    },
+    {
+      "id": 443,
+      "image_id": 68,
+      "category_id": 3,
+      "bbox": [
+        320,
+        139,
+        201,
+        49
+      ],
+      "area": 9849,
+      "iscrowd": 0,
+      "text": "Initialize dp array"
+    },
+    {
+      "id": 444,
+      "image_id": 68,
+      "category_id": 3,
+      "bbox": [
+        480,
+        238,
+        316,
+        52
+      ],
+      "area": 16432,
+      "iscrowd": 0,
+      "text": "Fill dp with minimum coins"
+    },
+    {
+      "id": 445,
+      "image_id": 68,
+      "category_id": 1,
+      "bbox": [
+        640,
+        340,
+        191,
+        43
+      ],
+      "area": 8213,
+      "iscrowd": 0,
+      "text": "End Coin Change"
+    },
+    {
+      "id": 446,
+      "image_id": 69,
       "category_id": 1,
       "bbox": [
         160,
         50,
         184,
-        49
+        44
       ],
-      "area": 9016,
+      "area": 8096,
       "iscrowd": 0,
-      "text": "Start Min Cut"
+      "text": "Start Fibonacci"
     },
     {
-      "id": 185,
-      "image_id": 30,
+      "id": 447,
+      "image_id": 69,
       "category_id": 3,
       "bbox": [
         320,
-        149,
-        254,
-        48
+        144,
+        274,
+        41
       ],
-      "area": 12192,
+      "area": 11234,
       "iscrowd": 0,
-      "text": "Run max flow algorithm"
+      "text": "dp[0] = 0, dp[1] = 1"
     },
     {
-      "id": 186,
-      "image_id": 30,
+      "id": 448,
+      "image_id": 69,
       "category_id": 3,
       "bbox": [
         480,
-        247,
-        298,
-        52
+        235,
+        105,
+        35
       ],
-      "area": 15496,
+      "area": 3675,
       "iscrowd": 0,
-      "text": "Identify minimum cut set"
+      "text": "i = 2"
     },
     {
-      "id": 187,
-      "image_id": 30,
+      "id": 449,
+      "image_id": 69,
+      "category_id": 2,
+      "bbox": [
+        640,
+        320,
+        174,
+        61
+      ],
+      "area": 10614,
+      "iscrowd": 0,
+      "text": "i <= n?"
+    },
+    {
+      "id": 450,
+      "image_id": 69,
+      "category_id": 3,
+      "bbox": [
+        160,
+        431,
+        318,
+        40
+      ],
+      "area": 12720,
+      "iscrowd": 0,
+      "text": "dp[i] = dp[i-1] + dp[i-2]"
+    },
+    {
+      "id": 451,
+      "image_id": 69,
+      "category_id": 3,
+      "bbox": [
+        320,
+        521,
+        120,
+        53
+      ],
+      "area": 6360,
+      "iscrowd": 0,
+      "text": "i = i + 1"
+    },
+    {
+      "id": 452,
+      "image_id": 69,
+      "category_id": 3,
+      "bbox": [
+        480,
+        624,
+        186,
+        34
+      ],
+      "area": 6324,
+      "iscrowd": 0,
+      "text": "Return dp[n]"
+    },
+    {
+      "id": 453,
+      "image_id": 69,
       "category_id": 1,
       "bbox": [
         640,
-        349,
-        136,
-        47
+        708,
+        162,
+        42
       ],
-      "area": 6392,
+      "area": 6804,
       "iscrowd": 0,
-      "text": "End Min Cut"
+      "text": "End Fibonacci"
     },
     {
-      "id": 188,
-      "image_id": 31,
+      "id": 454,
+      "image_id": 70,
       "category_id": 1,
       "bbox": [
         160,
         50,
         196,
-        36
+        44
       ],
-      "area": 7056,
+      "area": 8624,
       "iscrowd": 0,
-      "text": "Start Z Algorithm"
+      "text": "Start Subset Sum"
     },
     {
-      "id": 189,
-      "image_id": 31,
+      "id": 455,
+      "image_id": 70,
       "category_id": 3,
       "bbox": [
         320,
-        136,
-        183,
-        50
+        144,
+        212,
+        38
       ],
-      "area": 9150,
+      "area": 8056,
       "iscrowd": 0,
-      "text": "Initialize Z array"
+      "text": "Initialize dp array"
     },
     {
-      "id": 190,
-      "image_id": 31,
+      "id": 456,
+      "image_id": 70,
       "category_id": 3,
       "bbox": [
         480,
-        236,
-        400,
-        53
+        232,
+        293,
+        49
       ],
-      "area": 21200,
+      "area": 14357,
       "iscrowd": 0,
-      "text": "Compute Z values using sliding window"
+      "text": "Fill dp for possible sums"
     },
     {
-      "id": 191,
-      "image_id": 31,
+      "id": 457,
+      "image_id": 70,
       "category_id": 1,
       "bbox": [
         640,
-        339,
-        201,
-        37
+        331,
+        211,
+        48
       ],
-      "area": 7437,
+      "area": 10128,
       "iscrowd": 0,
-      "text": "End Z Algorithm"
+      "text": "End Subset Sum"
     },
     {
-      "id": 192,
-      "image_id": 32,
+      "id": 458,
+      "image_id": 71,
       "category_id": 1,
       "bbox": [
         160,
         50,
-        210,
-        50
+        299,
+        46
       ],
-      "area": 10500,
+      "area": 13754,
       "iscrowd": 0,
-      "text": "Start Linear Search"
+      "text": "Start Manacher's Algorithm"
     },
     {
-      "id": 193,
-      "image_id": 32,
+      "id": 459,
+      "image_id": 71,
       "category_id": 3,
       "bbox": [
         320,
-        150,
-        118,
-        47
+        146,
+        477,
+        37
       ],
-      "area": 5546,
+      "area": 17649,
       "iscrowd": 0,
-      "text": "i = 0"
+      "text": "Transform string to handle odd/even lengths"
     },
     {
-      "id": 194,
-      "image_id": 32,
-      "category_id": 2,
+      "id": 460,
+      "image_id": 71,
+      "category_id": 3,
       "bbox": [
         480,
-        247,
-        147,
-        73
+        233,
+        329,
+        47
       ],
-      "area": 10731,
+      "area": 15463,
       "iscrowd": 0,
-      "text": "i < n?"
+      "text": "Compute palindrome lengths"
     },
     {
-      "id": 195,
-      "image_id": 32,
+      "id": 461,
+      "image_id": 71,
+      "category_id": 1,
+      "bbox": [
+        640,
+        330,
+        301,
+        51
+      ],
+      "area": 15351,
+      "iscrowd": 0,
+      "text": "End Manacher's Algorithm"
+    },
+    {
+      "id": 462,
+      "image_id": 72,
+      "category_id": 1,
+      "bbox": [
+        160,
+        50,
+        165,
+        40
+      ],
+      "area": 6600,
+      "iscrowd": 0,
+      "text": "Start Fibonacci"
+    },
+    {
+      "id": 463,
+      "image_id": 72,
+      "category_id": 3,
+      "bbox": [
+        320,
+        140,
+        240,
+        49
+      ],
+      "area": 11760,
+      "iscrowd": 0,
+      "text": "dp[0] = 0, dp[1] = 1"
+    },
+    {
+      "id": 464,
+      "image_id": 72,
+      "category_id": 3,
+      "bbox": [
+        480,
+        239,
+        102,
+        49
+      ],
+      "area": 4998,
+      "iscrowd": 0,
+      "text": "i = 2"
+    },
+    {
+      "id": 465,
+      "image_id": 72,
       "category_id": 2,
       "bbox": [
         640,
-        370,
-        331,
-        61
+        338,
+        159,
+        60
       ],
-      "area": 20191,
+      "area": 9540,
       "iscrowd": 0,
-      "text": "array[i] == target?"
+      "text": "i <= n?"
     },
     {
-      "id": 196,
-      "image_id": 32,
+      "id": 466,
+      "image_id": 72,
       "category_id": 3,
       "bbox": [
         160,
-        481,
-        153,
-        38
+        448,
+        296,
+        35
       ],
-      "area": 5814,
+      "area": 10360,
+      "iscrowd": 0,
+      "text": "dp[i] = dp[i-1] + dp[i-2]"
+    },
+    {
+      "id": 467,
+      "image_id": 72,
+      "category_id": 3,
+      "bbox": [
+        320,
+        533,
+        117,
+        51
+      ],
+      "area": 5967,
       "iscrowd": 0,
       "text": "i = i + 1"
     },
     {
-      "id": 197,
-      "image_id": 32,
-      "category_id": 3,
-      "bbox": [
-        320,
-        569,
-        329,
-        40
-      ],
-      "area": 13160,
-      "iscrowd": 0,
-      "text": "Return -1 (Target not found)"
-    },
-    {
-      "id": 198,
-      "image_id": 32,
+      "id": 468,
+      "image_id": 72,
       "category_id": 3,
       "bbox": [
         480,
-        659,
-        345,
-        36
+        634,
+        185,
+        53
       ],
-      "area": 12420,
+      "area": 9805,
       "iscrowd": 0,
-      "text": "Return i (Target found at index i)"
+      "text": "Return dp[n]"
     },
     {
-      "id": 199,
-      "image_id": 32,
+      "id": 469,
+      "image_id": 72,
       "category_id": 1,
       "bbox": [
         640,
-        745,
-        215,
-        42
+        737,
+        182,
+        46
       ],
-      "area": 9030,
+      "area": 8372,
       "iscrowd": 0,
-      "text": "End Linear Search"
+      "text": "End Fibonacci"
     },
     {
-      "id": 200,
-      "image_id": 33,
+      "id": 470,
+      "image_id": 73,
       "category_id": 1,
       "bbox": [
         160,
         50,
-        150,
-        41
+        188,
+        42
       ],
-      "area": 6150,
+      "area": 7896,
       "iscrowd": 0,
-      "text": "Start TSP DP"
+      "text": "Start Rabin-Karp"
     },
     {
-      "id": 201,
-      "image_id": 33,
+      "id": 471,
+      "image_id": 73,
       "category_id": 3,
       "bbox": [
         320,
-        141,
-        287,
-        51
+        142,
+        238,
+        48
       ],
-      "area": 14637,
+      "area": 11424,
       "iscrowd": 0,
-      "text": "Initialize dp with infinity"
+      "text": "Compute pattern hash"
     },
     {
-      "id": 202,
-      "image_id": 33,
+      "id": 472,
+      "image_id": 73,
       "category_id": 3,
       "bbox": [
         480,
-        242,
-        445,
-        45
+        240,
+        323,
+        38
       ],
-      "area": 20025,
+      "area": 12274,
       "iscrowd": 0,
-      "text": "Use dynamic programming with bitmask"
+      "text": "Compute initial window hash"
     },
     {
-      "id": 203,
-      "image_id": 33,
+      "id": 473,
+      "image_id": 73,
+      "category_id": 3,
+      "bbox": [
+        640,
+        328,
+        115,
+        34
+      ],
+      "area": 3910,
+      "iscrowd": 0,
+      "text": "i = 0"
+    },
+    {
+      "id": 474,
+      "image_id": 73,
+      "category_id": 2,
+      "bbox": [
+        160,
+        412,
+        230,
+        51
+      ],
+      "area": 11730,
+      "iscrowd": 0,
+      "text": "i <= n-m?"
+    },
+    {
+      "id": 475,
+      "image_id": 73,
+      "category_id": 2,
+      "bbox": [
+        320,
+        513,
+        252,
+        65
+      ],
+      "area": 16380,
+      "iscrowd": 0,
+      "text": "Hash match?"
+    },
+    {
+      "id": 476,
+      "image_id": 73,
+      "category_id": 3,
+      "bbox": [
+        480,
+        628,
+        262,
+        47
+      ],
+      "area": 12314,
+      "iscrowd": 0,
+      "text": "Verify character match"
+    },
+    {
+      "id": 477,
+      "image_id": 73,
+      "category_id": 3,
+      "bbox": [
+        640,
+        725,
+        276,
+        44
+      ],
+      "area": 12144,
+      "iscrowd": 0,
+      "text": "Report match if verified"
+    },
+    {
+      "id": 478,
+      "image_id": 73,
+      "category_id": 3,
+      "bbox": [
+        160,
+        819,
+        292,
+        42
+      ],
+      "area": 12264,
+      "iscrowd": 0,
+      "text": "Slide window, update hash"
+    },
+    {
+      "id": 479,
+      "image_id": 73,
+      "category_id": 1,
+      "bbox": [
+        320,
+        911,
+        187,
+        41
+      ],
+      "area": 7667,
+      "iscrowd": 0,
+      "text": "End Rabin-Karp"
+    },
+    {
+      "id": 480,
+      "image_id": 74,
+      "category_id": 1,
+      "bbox": [
+        160,
+        50,
+        226,
+        40
+      ],
+      "area": 9040,
+      "iscrowd": 0,
+      "text": "Start Subset Sum"
+    },
+    {
+      "id": 481,
+      "image_id": 74,
+      "category_id": 3,
+      "bbox": [
+        320,
+        140,
+        198,
+        44
+      ],
+      "area": 8712,
+      "iscrowd": 0,
+      "text": "Initialize dp array"
+    },
+    {
+      "id": 482,
+      "image_id": 74,
+      "category_id": 3,
+      "bbox": [
+        480,
+        234,
+        306,
+        47
+      ],
+      "area": 14382,
+      "iscrowd": 0,
+      "text": "Fill dp for possible sums"
+    },
+    {
+      "id": 483,
+      "image_id": 74,
       "category_id": 1,
       "bbox": [
         640,
-        337,
-        165,
-        39
+        331,
+        205,
+        53
       ],
-      "area": 6435,
+      "area": 10865,
       "iscrowd": 0,
-      "text": "End TSP DP"
+      "text": "End Subset Sum"
+    },
+    {
+      "id": 484,
+      "image_id": 75,
+      "category_id": 1,
+      "bbox": [
+        160,
+        50,
+        175,
+        38
+      ],
+      "area": 6650,
+      "iscrowd": 0,
+      "text": "Start Fibonacci"
+    },
+    {
+      "id": 485,
+      "image_id": 75,
+      "category_id": 3,
+      "bbox": [
+        320,
+        138,
+        255,
+        37
+      ],
+      "area": 9435,
+      "iscrowd": 0,
+      "text": "dp[0] = 0, dp[1] = 1"
+    },
+    {
+      "id": 486,
+      "image_id": 75,
+      "category_id": 3,
+      "bbox": [
+        480,
+        225,
+        97,
+        37
+      ],
+      "area": 3589,
+      "iscrowd": 0,
+      "text": "i = 2"
+    },
+    {
+      "id": 487,
+      "image_id": 75,
+      "category_id": 2,
+      "bbox": [
+        640,
+        312,
+        178,
+        59
+      ],
+      "area": 10502,
+      "iscrowd": 0,
+      "text": "i <= n?"
+    },
+    {
+      "id": 488,
+      "image_id": 75,
+      "category_id": 3,
+      "bbox": [
+        160,
+        421,
+        281,
+        48
+      ],
+      "area": 13488,
+      "iscrowd": 0,
+      "text": "dp[i] = dp[i-1] + dp[i-2]"
+    },
+    {
+      "id": 489,
+      "image_id": 75,
+      "category_id": 3,
+      "bbox": [
+        320,
+        519,
+        145,
+        43
+      ],
+      "area": 6235,
+      "iscrowd": 0,
+      "text": "i = i + 1"
+    },
+    {
+      "id": 490,
+      "image_id": 75,
+      "category_id": 3,
+      "bbox": [
+        480,
+        612,
+        144,
+        45
+      ],
+      "area": 6480,
+      "iscrowd": 0,
+      "text": "Return dp[n]"
+    },
+    {
+      "id": 491,
+      "image_id": 75,
+      "category_id": 1,
+      "bbox": [
+        640,
+        707,
+        171,
+        40
+      ],
+      "area": 6840,
+      "iscrowd": 0,
+      "text": "End Fibonacci"
     }
   ],
   "categories": [

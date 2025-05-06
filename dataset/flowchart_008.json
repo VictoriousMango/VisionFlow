@@ -3,53 +3,150 @@
     {
       "id": 0,
       "shape": "oval",
-      "text": "Start Min Cut",
+      "text": "Start Binary Search",
       "x": 160,
       "y": 50,
-      "w": 180,
-      "h": 37,
-      "center_x": 250,
-      "center_y": 68,
-      "bottom_y": 87,
+      "w": 235,
+      "h": 43,
+      "center_x": 277,
+      "center_y": 71,
+      "bottom_y": 93,
       "step_type": "start"
     },
     {
       "id": 1,
       "shape": "rectangle",
-      "text": "Run max flow algorithm",
+      "text": "low = 0, high = n-1",
       "x": 320,
-      "y": 137,
-      "w": 271,
-      "h": 42,
-      "center_x": 455,
-      "center_y": 158,
-      "bottom_y": 179,
+      "y": 143,
+      "w": 272,
+      "h": 49,
+      "center_x": 456,
+      "center_y": 167,
+      "bottom_y": 192,
       "step_type": "process"
     },
     {
       "id": 2,
-      "shape": "rectangle",
-      "text": "Identify minimum cut set",
+      "shape": "diamond",
+      "text": "low <= high?",
       "x": 480,
-      "y": 229,
-      "w": 295,
-      "h": 36,
-      "center_x": 627,
-      "center_y": 247,
-      "bottom_y": 265,
-      "step_type": "process"
+      "y": 242,
+      "w": 230,
+      "h": 70,
+      "center_x": 595,
+      "center_y": 277,
+      "bottom_y": 312,
+      "step_type": "decision",
+      "true_branch": 3,
+      "false_branch": 6
     },
     {
       "id": 3,
-      "shape": "oval",
-      "text": "End Min Cut",
+      "shape": "rectangle",
+      "text": "mid = (low + high) // 2",
       "x": 640,
-      "y": 315,
-      "w": 144,
-      "h": 50,
-      "center_x": 712,
-      "center_y": 340,
-      "bottom_y": 365,
+      "y": 362,
+      "w": 298,
+      "h": 49,
+      "center_x": 789,
+      "center_y": 386,
+      "bottom_y": 411,
+      "step_type": "process"
+    },
+    {
+      "id": 4,
+      "shape": "diamond",
+      "text": "array[mid] == target?",
+      "x": 160,
+      "y": 461,
+      "w": 400,
+      "h": 81,
+      "center_x": 360,
+      "center_y": 501,
+      "bottom_y": 542,
+      "step_type": "decision",
+      "true_branch": 7,
+      "false_branch": 5
+    },
+    {
+      "id": 5,
+      "shape": "diamond",
+      "text": "array[mid] > target?",
+      "x": 320,
+      "y": 592,
+      "w": 354,
+      "h": 56,
+      "center_x": 497,
+      "center_y": 620,
+      "bottom_y": 648,
+      "step_type": "decision",
+      "true_branch": 8,
+      "false_branch": 9
+    },
+    {
+      "id": 6,
+      "shape": "rectangle",
+      "text": "Return -1 (Target not found)",
+      "x": 480,
+      "y": 698,
+      "w": 307,
+      "h": 41,
+      "center_x": 633,
+      "center_y": 718,
+      "bottom_y": 739,
+      "step_type": "process"
+    },
+    {
+      "id": 7,
+      "shape": "rectangle",
+      "text": "Return mid (Target found at index mid)",
+      "x": 640,
+      "y": 789,
+      "w": 453,
+      "h": 41,
+      "center_x": 866,
+      "center_y": 809,
+      "bottom_y": 830,
+      "step_type": "process"
+    },
+    {
+      "id": 8,
+      "shape": "rectangle",
+      "text": "high = mid - 1",
+      "x": 160,
+      "y": 880,
+      "w": 190,
+      "h": 36,
+      "center_x": 255,
+      "center_y": 898,
+      "bottom_y": 916,
+      "step_type": "process"
+    },
+    {
+      "id": 9,
+      "shape": "rectangle",
+      "text": "low = mid + 1",
+      "x": 320,
+      "y": 966,
+      "w": 174,
+      "h": 49,
+      "center_x": 407,
+      "center_y": 990,
+      "bottom_y": 1015,
+      "step_type": "process"
+    },
+    {
+      "id": 10,
+      "shape": "oval",
+      "text": "End Binary Search",
+      "x": 480,
+      "y": 1065,
+      "w": 233,
+      "h": 42,
+      "center_x": 596,
+      "center_y": 1086,
+      "bottom_y": 1107,
       "step_type": "end"
     }
   ],
@@ -67,6 +164,41 @@
     {
       "from_id": 2,
       "to_id": 3,
+      "label": "True"
+    },
+    {
+      "from_id": 2,
+      "to_id": 6,
+      "label": "False"
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": null
+    },
+    {
+      "from_id": 4,
+      "to_id": 7,
+      "label": "True"
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": "False"
+    },
+    {
+      "from_id": 5,
+      "to_id": 8,
+      "label": "True"
+    },
+    {
+      "from_id": 5,
+      "to_id": 9,
+      "label": "False"
+    },
+    {
+      "from_id": 9,
+      "to_id": 10,
       "label": null
     }
   ]

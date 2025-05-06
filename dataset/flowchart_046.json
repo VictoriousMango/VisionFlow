@@ -1,0 +1,73 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Articulation Points",
+      "x": 160,
+      "y": 50,
+      "w": 256,
+      "h": 48,
+      "center_x": 288,
+      "center_y": 74,
+      "bottom_y": 98,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "DFS with discovery and low values",
+      "x": 320,
+      "y": 148,
+      "w": 395,
+      "h": 51,
+      "center_x": 517,
+      "center_y": 173,
+      "bottom_y": 199,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "rectangle",
+      "text": "Identify cut vertices",
+      "x": 480,
+      "y": 249,
+      "w": 229,
+      "h": 40,
+      "center_x": 594,
+      "center_y": 269,
+      "bottom_y": 289,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "oval",
+      "text": "End Articulation Points",
+      "x": 640,
+      "y": 339,
+      "w": 248,
+      "h": 48,
+      "center_x": 764,
+      "center_y": 363,
+      "bottom_y": 387,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": null
+    }
+  ]
+}

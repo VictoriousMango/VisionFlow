@@ -1,0 +1,73 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Subset Sum",
+      "x": 160,
+      "y": 50,
+      "w": 196,
+      "h": 44,
+      "center_x": 258,
+      "center_y": 72,
+      "bottom_y": 94,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Initialize dp array",
+      "x": 320,
+      "y": 144,
+      "w": 212,
+      "h": 38,
+      "center_x": 426,
+      "center_y": 163,
+      "bottom_y": 182,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "rectangle",
+      "text": "Fill dp for possible sums",
+      "x": 480,
+      "y": 232,
+      "w": 293,
+      "h": 49,
+      "center_x": 626,
+      "center_y": 256,
+      "bottom_y": 281,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "oval",
+      "text": "End Subset Sum",
+      "x": 640,
+      "y": 331,
+      "w": 211,
+      "h": 48,
+      "center_x": 745,
+      "center_y": 355,
+      "bottom_y": 379,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": null
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Insertion Sort",
+      "x": 160,
+      "y": 50,
+      "w": 229,
+      "h": 43,
+      "center_x": 274,
+      "center_y": 71,
+      "bottom_y": 93,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "i = 1",
+      "x": 320,
+      "y": 143,
+      "w": 84,
+      "h": 43,
+      "center_x": 362,
+      "center_y": 164,
+      "bottom_y": 186,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "diamond",
+      "text": "i < n?",
+      "x": 480,
+      "y": 236,
+      "w": 137,
+      "h": 56,
+      "center_x": 548,
+      "center_y": 264,
+      "bottom_y": 292,
+      "step_type": "decision",
+      "true_branch": 3,
+      "false_branch": 8
+    },
+    {
+      "id": 3,
+      "shape": "rectangle",
+      "text": "key = array[i], j = i-1",
+      "x": 640,
+      "y": 342,
+      "w": 261,
+      "h": 39,
+      "center_x": 770,
+      "center_y": 361,
+      "bottom_y": 381,
+      "step_type": "process"
+    },
+    {
+      "id": 4,
+      "shape": "diamond",
+      "text": "j >= 0 && array[j] > key?",
+      "x": 160,
+      "y": 431,
+      "w": 432,
+      "h": 61,
+      "center_x": 376,
+      "center_y": 461,
+      "bottom_y": 492,
+      "step_type": "decision",
+      "true_branch": 5,
+      "false_branch": 7
+    },
+    {
+      "id": 5,
+      "shape": "rectangle",
+      "text": "array[j+1] = array[j]",
+      "x": 320,
+      "y": 542,
+      "w": 236,
+      "h": 39,
+      "center_x": 438,
+      "center_y": 561,
+      "bottom_y": 581,
+      "step_type": "process"
+    },
+    {
+      "id": 6,
+      "shape": "rectangle",
+      "text": "j = j - 1",
+      "x": 480,
+      "y": 631,
+      "w": 154,
+      "h": 50,
+      "center_x": 557,
+      "center_y": 656,
+      "bottom_y": 681,
+      "step_type": "process"
+    },
+    {
+      "id": 7,
+      "shape": "rectangle",
+      "text": "array[j+1] = key",
+      "x": 640,
+      "y": 731,
+      "w": 189,
+      "h": 51,
+      "center_x": 734,
+      "center_y": 756,
+      "bottom_y": 782,
+      "step_type": "process"
+    },
+    {
+      "id": 8,
+      "shape": "oval",
+      "text": "End Insertion Sort",
+      "x": 160,
+      "y": 832,
+      "w": 228,
+      "h": 34,
+      "center_x": 274,
+      "center_y": 849,
+      "bottom_y": 866,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": "True"
+    },
+    {
+      "from_id": 2,
+      "to_id": 8,
+      "label": "False"
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": null
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": "True"
+    },
+    {
+      "from_id": 4,
+      "to_id": 7,
+      "label": "False"
+    },
+    {
+      "from_id": 5,
+      "to_id": 6,
+      "label": null
+    }
+  ]
+}

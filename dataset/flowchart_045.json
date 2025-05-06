@@ -1,0 +1,73 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Edit Distance",
+      "x": 160,
+      "y": 50,
+      "w": 205,
+      "h": 36,
+      "center_x": 262,
+      "center_y": 68,
+      "bottom_y": 86,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Initialize dp matrix",
+      "x": 320,
+      "y": 136,
+      "w": 199,
+      "h": 39,
+      "center_x": 419,
+      "center_y": 155,
+      "bottom_y": 175,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "rectangle",
+      "text": "Fill dp with minimum edits",
+      "x": 480,
+      "y": 225,
+      "w": 288,
+      "h": 51,
+      "center_x": 624,
+      "center_y": 250,
+      "bottom_y": 276,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "oval",
+      "text": "End Edit Distance",
+      "x": 640,
+      "y": 326,
+      "w": 204,
+      "h": 37,
+      "center_x": 742,
+      "center_y": 344,
+      "bottom_y": 363,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": null
+    }
+  ]
+}

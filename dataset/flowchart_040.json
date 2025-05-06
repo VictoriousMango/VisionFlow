@@ -1,0 +1,149 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Kruskal",
+      "x": 160,
+      "y": 50,
+      "w": 150,
+      "h": 48,
+      "center_x": 235,
+      "center_y": 74,
+      "bottom_y": 98,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Sort all edges by weight",
+      "x": 320,
+      "y": 148,
+      "w": 296,
+      "h": 35,
+      "center_x": 468,
+      "center_y": 165,
+      "bottom_y": 183,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "rectangle",
+      "text": "Initialize disjoint set for all vertices",
+      "x": 480,
+      "y": 233,
+      "w": 359,
+      "h": 51,
+      "center_x": 659,
+      "center_y": 258,
+      "bottom_y": 284,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "diamond",
+      "text": "More edges to process?",
+      "x": 640,
+      "y": 334,
+      "w": 418,
+      "h": 62,
+      "center_x": 849,
+      "center_y": 365,
+      "bottom_y": 396,
+      "step_type": "decision",
+      "true_branch": 4,
+      "false_branch": 7
+    },
+    {
+      "id": 4,
+      "shape": "rectangle",
+      "text": "Get next edge (u, v)",
+      "x": 160,
+      "y": 446,
+      "w": 252,
+      "h": 42,
+      "center_x": 286,
+      "center_y": 467,
+      "bottom_y": 488,
+      "step_type": "process"
+    },
+    {
+      "id": 5,
+      "shape": "diamond",
+      "text": "Union of u and v does not form cycle?",
+      "x": 320,
+      "y": 538,
+      "w": 626,
+      "h": 59,
+      "center_x": 633,
+      "center_y": 567,
+      "bottom_y": 597,
+      "step_type": "decision",
+      "true_branch": 6,
+      "false_branch": 3
+    },
+    {
+      "id": 6,
+      "shape": "rectangle",
+      "text": "Add edge (u, v) to MST",
+      "x": 480,
+      "y": 647,
+      "w": 267,
+      "h": 34,
+      "center_x": 613,
+      "center_y": 664,
+      "bottom_y": 681,
+      "step_type": "process"
+    },
+    {
+      "id": 7,
+      "shape": "oval",
+      "text": "End Kruskal",
+      "x": 640,
+      "y": 731,
+      "w": 173,
+      "h": 42,
+      "center_x": 726,
+      "center_y": 752,
+      "bottom_y": 773,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": "True"
+    },
+    {
+      "from_id": 3,
+      "to_id": 7,
+      "label": "False"
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": null
+    },
+    {
+      "from_id": 5,
+      "to_id": 6,
+      "label": "True"
+    },
+    {
+      "from_id": 5,
+      "to_id": 3,
+      "label": "False"
+    }
+  ]
+}

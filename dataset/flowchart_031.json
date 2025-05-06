@@ -3,53 +3,94 @@
     {
       "id": 0,
       "shape": "oval",
-      "text": "Start Z Algorithm",
+      "text": "Start Merge Sort",
       "x": 160,
       "y": 50,
-      "w": 196,
-      "h": 36,
-      "center_x": 258,
-      "center_y": 68,
-      "bottom_y": 86,
+      "w": 193,
+      "h": 52,
+      "center_x": 256,
+      "center_y": 76,
+      "bottom_y": 102,
       "step_type": "start"
     },
     {
       "id": 1,
-      "shape": "rectangle",
-      "text": "Initialize Z array",
+      "shape": "diamond",
+      "text": "low < high?",
       "x": 320,
-      "y": 136,
-      "w": 183,
-      "h": 50,
-      "center_x": 411,
-      "center_y": 161,
-      "bottom_y": 186,
-      "step_type": "process"
+      "y": 152,
+      "w": 248,
+      "h": 76,
+      "center_x": 444,
+      "center_y": 190,
+      "bottom_y": 228,
+      "step_type": "decision",
+      "true_branch": 2,
+      "false_branch": 6
     },
     {
       "id": 2,
       "shape": "rectangle",
-      "text": "Compute Z values using sliding window",
+      "text": "mid = (low + high) // 2",
       "x": 480,
-      "y": 236,
-      "w": 400,
-      "h": 53,
-      "center_x": 680,
-      "center_y": 262,
-      "bottom_y": 289,
+      "y": 278,
+      "w": 299,
+      "h": 45,
+      "center_x": 629,
+      "center_y": 300,
+      "bottom_y": 323,
       "step_type": "process"
     },
     {
       "id": 3,
-      "shape": "oval",
-      "text": "End Z Algorithm",
+      "shape": "rectangle",
+      "text": "MergeSort(low, mid)",
       "x": 640,
-      "y": 339,
-      "w": 201,
-      "h": 37,
-      "center_x": 740,
-      "center_y": 357,
-      "bottom_y": 376,
+      "y": 373,
+      "w": 236,
+      "h": 42,
+      "center_x": 758,
+      "center_y": 394,
+      "bottom_y": 415,
+      "step_type": "process"
+    },
+    {
+      "id": 4,
+      "shape": "rectangle",
+      "text": "MergeSort(mid+1, high)",
+      "x": 160,
+      "y": 465,
+      "w": 286,
+      "h": 44,
+      "center_x": 303,
+      "center_y": 487,
+      "bottom_y": 509,
+      "step_type": "process"
+    },
+    {
+      "id": 5,
+      "shape": "rectangle",
+      "text": "Merge(low, mid, high)",
+      "x": 320,
+      "y": 559,
+      "w": 275,
+      "h": 38,
+      "center_x": 457,
+      "center_y": 578,
+      "bottom_y": 597,
+      "step_type": "process"
+    },
+    {
+      "id": 6,
+      "shape": "oval",
+      "text": "End Merge Sort",
+      "x": 480,
+      "y": 647,
+      "w": 202,
+      "h": 47,
+      "center_x": 581,
+      "center_y": 670,
+      "bottom_y": 694,
       "step_type": "end"
     }
   ],
@@ -62,11 +103,26 @@
     {
       "from_id": 1,
       "to_id": 2,
-      "label": null
+      "label": "True"
+    },
+    {
+      "from_id": 1,
+      "to_id": 6,
+      "label": "False"
     },
     {
       "from_id": 2,
       "to_id": 3,
+      "label": null
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": null
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
       "label": null
     }
   ]

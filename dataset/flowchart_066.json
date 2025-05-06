@@ -1,0 +1,223 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start 0/1 Knapsack",
+      "x": 160,
+      "y": 50,
+      "w": 234,
+      "h": 38,
+      "center_x": 277,
+      "center_y": 69,
+      "bottom_y": 88,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Initialize dp[n+1][W+1] to 0",
+      "x": 320,
+      "y": 138,
+      "w": 299,
+      "h": 39,
+      "center_x": 469,
+      "center_y": 157,
+      "bottom_y": 177,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "rectangle",
+      "text": "i = 1",
+      "x": 480,
+      "y": 227,
+      "w": 96,
+      "h": 34,
+      "center_x": 528,
+      "center_y": 244,
+      "bottom_y": 261,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "diamond",
+      "text": "i <= n?",
+      "x": 640,
+      "y": 311,
+      "w": 148,
+      "h": 77,
+      "center_x": 714,
+      "center_y": 349,
+      "bottom_y": 388,
+      "step_type": "decision",
+      "true_branch": 4,
+      "false_branch": 10
+    },
+    {
+      "id": 4,
+      "shape": "rectangle",
+      "text": "j = 0",
+      "x": 160,
+      "y": 438,
+      "w": 106,
+      "h": 42,
+      "center_x": 213,
+      "center_y": 459,
+      "bottom_y": 480,
+      "step_type": "process"
+    },
+    {
+      "id": 5,
+      "shape": "diamond",
+      "text": "j <= W?",
+      "x": 320,
+      "y": 530,
+      "w": 186,
+      "h": 74,
+      "center_x": 413,
+      "center_y": 567,
+      "bottom_y": 604,
+      "step_type": "decision",
+      "true_branch": 6,
+      "false_branch": 9
+    },
+    {
+      "id": 6,
+      "shape": "diamond",
+      "text": "wt[i-1] <= j?",
+      "x": 480,
+      "y": 654,
+      "w": 260,
+      "h": 78,
+      "center_x": 610,
+      "center_y": 693,
+      "bottom_y": 732,
+      "step_type": "decision",
+      "true_branch": 7,
+      "false_branch": 8
+    },
+    {
+      "id": 7,
+      "shape": "rectangle",
+      "text": "dp[i][j] = max(val[i-1] + dp[i-1][j-wt[i-1]], dp[i-1][j])",
+      "x": 640,
+      "y": 782,
+      "w": 612,
+      "h": 39,
+      "center_x": 946,
+      "center_y": 801,
+      "bottom_y": 821,
+      "step_type": "process"
+    },
+    {
+      "id": 8,
+      "shape": "rectangle",
+      "text": "dp[i][j] = dp[i-1][j]",
+      "x": 160,
+      "y": 871,
+      "w": 218,
+      "h": 54,
+      "center_x": 269,
+      "center_y": 898,
+      "bottom_y": 925,
+      "step_type": "process"
+    },
+    {
+      "id": 9,
+      "shape": "rectangle",
+      "text": "j = j + 1",
+      "x": 320,
+      "y": 975,
+      "w": 155,
+      "h": 42,
+      "center_x": 397,
+      "center_y": 996,
+      "bottom_y": 1017,
+      "step_type": "process"
+    },
+    {
+      "id": 10,
+      "shape": "rectangle",
+      "text": "i = i + 1",
+      "x": 480,
+      "y": 1067,
+      "w": 117,
+      "h": 47,
+      "center_x": 538,
+      "center_y": 1090,
+      "bottom_y": 1114,
+      "step_type": "process"
+    },
+    {
+      "id": 11,
+      "shape": "oval",
+      "text": "End 0/1 Knapsack",
+      "x": 640,
+      "y": 1164,
+      "w": 239,
+      "h": 39,
+      "center_x": 759,
+      "center_y": 1183,
+      "bottom_y": 1203,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": null
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": "True"
+    },
+    {
+      "from_id": 3,
+      "to_id": 10,
+      "label": "False"
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": null
+    },
+    {
+      "from_id": 5,
+      "to_id": 6,
+      "label": "True"
+    },
+    {
+      "from_id": 5,
+      "to_id": 9,
+      "label": "False"
+    },
+    {
+      "from_id": 6,
+      "to_id": 7,
+      "label": "True"
+    },
+    {
+      "from_id": 6,
+      "to_id": 8,
+      "label": "False"
+    },
+    {
+      "from_id": 10,
+      "to_id": 11,
+      "label": null
+    }
+  ]
+}

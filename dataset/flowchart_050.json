@@ -1,0 +1,185 @@
+{
+  "elements": [
+    {
+      "id": 0,
+      "shape": "oval",
+      "text": "Start Rabin-Karp",
+      "x": 160,
+      "y": 50,
+      "w": 196,
+      "h": 49,
+      "center_x": 258,
+      "center_y": 74,
+      "bottom_y": 99,
+      "step_type": "start"
+    },
+    {
+      "id": 1,
+      "shape": "rectangle",
+      "text": "Compute pattern hash",
+      "x": 320,
+      "y": 149,
+      "w": 260,
+      "h": 37,
+      "center_x": 450,
+      "center_y": 167,
+      "bottom_y": 186,
+      "step_type": "process"
+    },
+    {
+      "id": 2,
+      "shape": "rectangle",
+      "text": "Compute initial window hash",
+      "x": 480,
+      "y": 236,
+      "w": 342,
+      "h": 48,
+      "center_x": 651,
+      "center_y": 260,
+      "bottom_y": 284,
+      "step_type": "process"
+    },
+    {
+      "id": 3,
+      "shape": "rectangle",
+      "text": "i = 0",
+      "x": 640,
+      "y": 334,
+      "w": 93,
+      "h": 46,
+      "center_x": 686,
+      "center_y": 357,
+      "bottom_y": 380,
+      "step_type": "process"
+    },
+    {
+      "id": 4,
+      "shape": "diamond",
+      "text": "i <= n-m?",
+      "x": 160,
+      "y": 430,
+      "w": 232,
+      "h": 78,
+      "center_x": 276,
+      "center_y": 469,
+      "bottom_y": 508,
+      "step_type": "decision",
+      "true_branch": 5,
+      "false_branch": 9
+    },
+    {
+      "id": 5,
+      "shape": "diamond",
+      "text": "Hash match?",
+      "x": 320,
+      "y": 558,
+      "w": 240,
+      "h": 81,
+      "center_x": 440,
+      "center_y": 598,
+      "bottom_y": 639,
+      "step_type": "decision",
+      "true_branch": 6,
+      "false_branch": 8
+    },
+    {
+      "id": 6,
+      "shape": "rectangle",
+      "text": "Verify character match",
+      "x": 480,
+      "y": 689,
+      "w": 244,
+      "h": 51,
+      "center_x": 602,
+      "center_y": 714,
+      "bottom_y": 740,
+      "step_type": "process"
+    },
+    {
+      "id": 7,
+      "shape": "rectangle",
+      "text": "Report match if verified",
+      "x": 640,
+      "y": 790,
+      "w": 264,
+      "h": 46,
+      "center_x": 772,
+      "center_y": 813,
+      "bottom_y": 836,
+      "step_type": "process"
+    },
+    {
+      "id": 8,
+      "shape": "rectangle",
+      "text": "Slide window, update hash",
+      "x": 160,
+      "y": 886,
+      "w": 295,
+      "h": 36,
+      "center_x": 307,
+      "center_y": 904,
+      "bottom_y": 922,
+      "step_type": "process"
+    },
+    {
+      "id": 9,
+      "shape": "oval",
+      "text": "End Rabin-Karp",
+      "x": 320,
+      "y": 972,
+      "w": 181,
+      "h": 40,
+      "center_x": 410,
+      "center_y": 992,
+      "bottom_y": 1012,
+      "step_type": "end"
+    }
+  ],
+  "connections": [
+    {
+      "from_id": 0,
+      "to_id": 1,
+      "label": null
+    },
+    {
+      "from_id": 1,
+      "to_id": 2,
+      "label": null
+    },
+    {
+      "from_id": 2,
+      "to_id": 3,
+      "label": null
+    },
+    {
+      "from_id": 3,
+      "to_id": 4,
+      "label": null
+    },
+    {
+      "from_id": 4,
+      "to_id": 5,
+      "label": "True"
+    },
+    {
+      "from_id": 4,
+      "to_id": 9,
+      "label": "False"
+    },
+    {
+      "from_id": 5,
+      "to_id": 6,
+      "label": "True"
+    },
+    {
+      "from_id": 5,
+      "to_id": 8,
+      "label": "False"
+    },
+    {
+      "from_id": 6,
+      "to_id": 7,
+      "label": null
+    }
+  ]
+}
